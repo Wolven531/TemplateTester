@@ -10,7 +10,7 @@ This repository is for the following purposes:
 
 ## Generating Code Coverage
 
-Run the following command in PowerShell from the root directory to generate a coverage report
+Run the following command in PowerShell from the root directory to generate a coverage report. Inspired by [this article](https://medium.com/agilix/collecting-test-coverage-using-coverlet-and-sonarqube-for-a-net-core-project-ef4a507d4b28)
 
 ```PowerShell
 dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
