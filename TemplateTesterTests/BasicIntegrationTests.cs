@@ -23,7 +23,7 @@ namespace TemplateTesterTests
 			var client = server.CreateClient();
 
 			// Act
-			var response = await client.GetAsync("/");
+			var response = await client.GetAsync("/api");
 
 			// Assert
 			response.EnsureSuccessStatusCode();

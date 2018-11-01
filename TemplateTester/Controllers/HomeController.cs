@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TemplateTester.Controllers
 {
-	[Route("api/[controller]")]
+	[Route("api")]
 	[ApiController]
 	public class HomeController : ControllerBase
 	{
