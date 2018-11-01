@@ -1,6 +1,8 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.TestHost;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -42,14 +44,21 @@ namespace TemplateTesterTests
 		public async Task GetHomePage_WhenInvoked_ShouldReturnHomepage()
 		{
 			// Arrange
+			var expectedResponse = new string[]
+			{
+				"value1", "value2"
+			};
 			var client = _Server.CreateClient();
 
 			// Act
 			var response = await client.GetAsync("/api");
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
-			response.EnsureSuccessStatusCode();
 			response.Content.Headers.ContentType.Should().Be(_JSONContentType);
+			response.StatusCode.Should().Be(200);
+			responseString.Should().BeEquivalentTo(JsonConvert.SerializeObject(expectedResponse));
 		}
 	}
 }
