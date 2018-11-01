@@ -15,3 +15,18 @@ Run the following command in PowerShell from the root directory to generate a co
 ```PowerShell
 dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 ```
+
+## Generating an HTML Report
+
+First ensure the [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) tool is
+installed. Alternative techniques may be found [here](https://danielpalme.github.io/ReportGenerator/usage.html).
+
+```PowerShell
+dotnet tool install --global dotnet-reportgenerator-globaltool --version 4.0.2
+```
+
+Then run the following to generate a fresh HTML from the coverage file you generated from `Generating Code Coverage`
+
+```PowerShell
+reportgenerator "-reports:.\TemplateTesterTests\coverage.opencover.xml" "-targetdir:.\TemplateTesterTests\coveragereport"
+```
