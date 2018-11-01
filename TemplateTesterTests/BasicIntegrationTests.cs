@@ -41,7 +41,7 @@ namespace TemplateTesterTests
 		}
 
 		[Fact]
-		public async Task GetHomePage_WhenInvoked_ShouldReturnHomepage()
+		public async Task GetAPIRoot_WhenInvoked_ShouldReturnJSONArrayOfStrings()
 		{
 			// Arrange
 			var expectedResponse = new string[]
