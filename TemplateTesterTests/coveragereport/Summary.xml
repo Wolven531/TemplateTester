@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CoverageReport scope="Summary">
+  <Summary>
+    <Generatedon>11/01/2018 - 03:50:15 PM</Generatedon>
+    <Parser>OpenCoverParser</Parser>
+    <Assemblies>2</Assemblies>
+    <Classes>6</Classes>
+    <Files>6</Files>
+    <Coveredlines>42</Coveredlines>
+    <Uncoveredlines>44</Uncoveredlines>
+    <Coverablelines>86</Coverablelines>
+    <Totallines>227</Totallines>
+    <Linecoverage>48.8%</Linecoverage>
+    <Branchcoverage>50%</Branchcoverage>
+  </Summary>
+  <Coverage>
+    <Assembly name="TemplateTester" classes="5" coverage="51.8" coveredlines="42" coverablelines="81" totallines="204" branchcoverage="50" coveredbranches="5" totalbranches="10">
+      <Class name="TemplateTester.Controllers.HomeController" coverage="50" coveredlines="6" coverablelines="12" totallines="46" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TemplateTester.Controllers.SampleDataController" coverage="0" coveredlines="0" coverablelines="19" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TemplateTester.Pages.ErrorModel" coverage="0" coveredlines="0" coverablelines="5" totallines="23" branchcoverage="0" coveredbranches="0" totalbranches="4" />
+      <Class name="TemplateTester.Program" coverage="0" coveredlines="0" coverablelines="5" totallines="24" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TemplateTester.Startup" coverage="90" coveredlines="36" coverablelines="40" totallines="67" branchcoverage="83.3" coveredbranches="5" totalbranches="6" />
+    </Assembly>
+    <Assembly name="TemplateTester.Views" classes="1" coverage="0" coveredlines="0" coverablelines="5" totallines="23" branchcoverage="" coveredbranches="0" totalbranches="0">
+      <Class name="TemplateTester.Pages.Pages_Error" coverage="0" coveredlines="0" coverablelines="5" totallines="23" branchcoverage="" coveredbranches="0" totalbranches="0" />
+    </Assembly>
+  </Coverage>
+</CoverageReport>
