@@ -60,5 +60,23 @@ namespace TemplateTesterTests
 			response.StatusCode.Should().Be(200);
 			responseString.Should().BeEquivalentTo(JsonConvert.SerializeObject(expectedResponse));
 		}
+
+		[Fact]
+		public async Task GetAPIRoot_WhenInvokedWithParameter_ShouldReturnString()
+		{
+			// Arrange
+			var expectedResponse = "value";
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.GetAsync("/api/999");
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.Content.Headers.ContentType.Should().Be(_TextContentType);
+			response.StatusCode.Should().Be(200);
+			responseString.Should().BeEquivalentTo(expectedResponse);
+		}
 	}
 }
