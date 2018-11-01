@@ -28,5 +28,5 @@ dotnet tool install --global dotnet-reportgenerator-globaltool --version 4.0.2
 Then run the following to generate a fresh HTML from the coverage file you generated from `Generating Code Coverage`
 
 ```PowerShell
-reportgenerator "-reports:.\TemplateTesterTests\coverage.opencover.xml" "-targetdir:.\TemplateTesterTests\coveragereport" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:coverage-report-history"
+reportgenerator "-reports:.\TemplateTesterTests\coverage.opencover.xml" "-targetdir:.\TemplateTesterTests\coverage-report" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:.\TemplateTesterTests\coverage-report-history"
 ```
