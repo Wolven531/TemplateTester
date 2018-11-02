@@ -1,1 +1,23 @@
-﻿
+﻿nav.nav-menu > ul {
+	list-style-position: inherit;
+	list-style-type: none;
+	padding: 0;
+}
+
+nav.nav-menu > ul li {
+	background-color: #aaa;
+	border: 1px solid #333;
+	display: inline-block;
+	padding: 8px 5px;
+}
+
+nav.nav-menu > ul a:link,
+nav.nav-menu > ul a:visited,
+nav.nav-menu > ul a:active {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+nav.nav-menu > ul a:hover {
+	text-decoration: underline;
+}
