@@ -16,6 +16,10 @@ Run the following command in PowerShell from the root directory to generate a co
 dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
 ```
 
+```Terminal (MacOS)
+dotnet test ./TemplateTesterTests/TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+```
+
 ## Generating an HTML Report
 
 First ensure the [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) tool is
