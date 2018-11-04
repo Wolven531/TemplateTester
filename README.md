@@ -34,3 +34,9 @@ Then run the following to generate a fresh HTML from the coverage file you gener
 ```PowerShell
 reportgenerator "-reports:.\TemplateTesterTests\coverage.opencover.xml" "-targetdir:.\TemplateTesterTests\coverage-report" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:.\TemplateTesterTests\coverage-report-history"
 ```
+
+TODO: The below line fails because the directory structure still relies on Windows... must fix...
+
+```Terminal (MacOS)
+reportgenerator "-reports:./TemplateTesterTests/coverage.opencover.xml" "-targetdir:./TemplateTesterTests/coverage-report" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:./TemplateTesterTests/coverage-report-history"
+```
