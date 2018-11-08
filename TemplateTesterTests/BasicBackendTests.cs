@@ -19,7 +19,7 @@ namespace TemplateTesterTests
 	public class BasicBackendTests
 	{
 		private const string _ContentTypeCharSet = "utf-8";
-		private const string _ServerHTTPSURL = "https://localhost:5310";
+		private const string _ServerURL_HTTPS = "https://localhost:5310";
 
 		private static readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
 		private static readonly MediaTypeHeaderValue _JSONContentType = new MediaTypeHeaderValue("application/json") { CharSet = _ContentTypeCharSet };
@@ -37,7 +37,7 @@ namespace TemplateTesterTests
 					.UseEnvironment(EnvironmentName.Staging)
 					.UseStartup<Startup>())
 			{
-				BaseAddress = new Uri(_ServerHTTPSURL)
+				BaseAddress = new Uri(_ServerURL_HTTPS)
 			};
 		}
 
