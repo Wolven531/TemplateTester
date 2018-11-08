@@ -4,9 +4,13 @@ using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Net;
+using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using TemplateTester;
+using TemplateTester.Models;
 using Xunit;
 
 namespace TemplateTesterTests
@@ -22,7 +26,6 @@ namespace TemplateTesterTests
 		private const string _ServerURL_HTTPS = "https://localhost:5310";
 
 		private static readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
-		private static readonly MediaTypeHeaderValue _JSONContentType = new MediaTypeHeaderValue("application/json") { CharSet = _ContentTypeCharSet };
 		private static readonly MediaTypeHeaderValue _TextContentType = new MediaTypeHeaderValue("text/plain") { CharSet = _ContentTypeCharSet };
 
 		private readonly TestServer _Server;
@@ -57,8 +60,8 @@ namespace TemplateTesterTests
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
-			response.Content.Headers.ContentType.Should().Be(_JSONContentType);
-			response.StatusCode.Should().Be(200);
+			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			response.StatusCode.Should().Be(HttpStatusCode.OK);
 			responseString.Should().BeEquivalentTo(JsonConvert.SerializeObject(expectedResponse));
 		}
 
@@ -76,8 +79,36 @@ namespace TemplateTesterTests
 
 			// Assert
 			response.Content.Headers.ContentType.Should().Be(_TextContentType);
-			response.StatusCode.Should().Be(200);
+			response.StatusCode.Should().Be(HttpStatusCode.OK);
 			responseString.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		[Fact]
+		public async Task PostAPIRoot_WhenInvokedWithDataInBody_ShouldReturnCreated()
+		{
+			// Arrange
+			//var expectedResponse = string.Empty;
+			var client = _Server.CreateClient();
+			//var uploadData = new JObject { ["value"] = "uploadValue" };
+
+			// Act
+			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None), Encoding.UTF8, _JSONContentType.MediaType));
+			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None), Encoding.UTF8));
+			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None)));
+			//var response = await client.PostAsync("/api", new StringContent(string.Empty));
+			var response = await client.PostAsync("/api", null);
+			//var postContent = new MultipartFormDataContent();
+			//postContent.Add(new StringContent("asdf"), "value");
+			//var response = await client.PostAsync("/api", postContent);
+			//var response = await client.PostAsync("/api", new StringContent("value=qwer"));
+			//var response = await client.PostAsync("/api", new JsonContent("value=qwer"));
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.Content.Headers.ContentType.Should().BeNull();
+			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
+			//responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 	}
 }
