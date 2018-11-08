@@ -11,32 +11,31 @@ using Xunit;
 
 namespace TemplateTesterTests
 {
-	public class BasicIntegrationTests
+	/// <summary>
+	/// This class asserts the app's ability to start up and communicate via HTTPS
+	/// </summary>
+	public class BasicBackendTests
 	{
 		private const string _ContentTypeCharSet = "utf-8";
-		private const string _ServerURL = "https://localhost:5310";
+		private const string _ServerHTTPSURL = "https://localhost:5310";
 
-		private readonly MediaTypeHeaderValue _HTMLContentType;
-		private readonly MediaTypeHeaderValue _JSONContentType;
-		private readonly MediaTypeHeaderValue _TextContentType;
+		private readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
+		private readonly MediaTypeHeaderValue _JSONContentType = new MediaTypeHeaderValue("application/json") { CharSet = _ContentTypeCharSet };
+		private readonly MediaTypeHeaderValue _TextContentType = new MediaTypeHeaderValue("text/plain") { CharSet = _ContentTypeCharSet };
 
 		private readonly TestServer _Server;
 
-		public BasicIntegrationTests()
+		/// <summary>
+		/// This constructor is used to set up any shared context needed by EACH Fact in this class
+		/// </summary>
+		public BasicBackendTests()
 		{
-			_HTMLContentType = MediaTypeHeaderValue.Parse("text/html");
-			_HTMLContentType.CharSet = _ContentTypeCharSet;
-			_JSONContentType = MediaTypeHeaderValue.Parse("application/json");
-			_JSONContentType.CharSet = _ContentTypeCharSet;
-			_TextContentType = MediaTypeHeaderValue.Parse("text/plain");
-			_TextContentType.CharSet = _ContentTypeCharSet;
-
 			_Server = new TestServer(
 				new WebHostBuilder()
 					.UseEnvironment(EnvironmentName.Staging)
 					.UseStartup<Startup>())
 			{
-				BaseAddress = new Uri(_ServerURL)
+				BaseAddress = new Uri(_ServerHTTPSURL)
 			};
 		}
 
