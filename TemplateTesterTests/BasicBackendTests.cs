@@ -12,16 +12,18 @@ using Xunit;
 namespace TemplateTesterTests
 {
 	/// <summary>
-	/// This class asserts the app's ability to start up and communicate via HTTPS
+	/// Test class that asserts app's ability to start up and communicate via HTTPS
+	///
+	/// Technique informed by: https://xunit.github.io/docs/comparisons.html
 	/// </summary>
 	public class BasicBackendTests
 	{
 		private const string _ContentTypeCharSet = "utf-8";
 		private const string _ServerHTTPSURL = "https://localhost:5310";
 
-		private readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
-		private readonly MediaTypeHeaderValue _JSONContentType = new MediaTypeHeaderValue("application/json") { CharSet = _ContentTypeCharSet };
-		private readonly MediaTypeHeaderValue _TextContentType = new MediaTypeHeaderValue("text/plain") { CharSet = _ContentTypeCharSet };
+		private static readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
+		private static readonly MediaTypeHeaderValue _JSONContentType = new MediaTypeHeaderValue("application/json") { CharSet = _ContentTypeCharSet };
+		private static readonly MediaTypeHeaderValue _TextContentType = new MediaTypeHeaderValue("text/plain") { CharSet = _ContentTypeCharSet };
 
 		private readonly TestServer _Server;
 
