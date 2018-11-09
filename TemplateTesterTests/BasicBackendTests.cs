@@ -84,7 +84,7 @@ namespace TemplateTesterTests
 		}
 
 		[Fact]
-		public async Task PostAPIRoot_WhenInvokedWithDataInBody_ShouldReturnCreated()
+		public async Task PostAPIRoot_WhenInvokedWithoutDataInBody_ShouldReturnNoContent()
 		{
 			// Arrange
 			//var expectedResponse = string.Empty;
@@ -109,6 +109,23 @@ namespace TemplateTesterTests
 			response.Content.Headers.ContentType.Should().BeNull();
 			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
 			//responseString.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		// TODO: fix test to test param POSTing properly
+		[Fact]
+		public async Task PostAPIRoot_WhenInvokedWithStringDataInBody_ShouldReturnNoContent()
+		{
+			// Arrange
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.PostAsync("/api", new StringContent("param1=qwer"));
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.Content.Headers.ContentType.Should().BeNull();
+			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
 		}
 	}
 }

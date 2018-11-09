@@ -28,15 +28,16 @@ namespace TemplateTester.Controllers
 
 		// POST: api
 		[HttpPost]
-		public ActionResult Post()
+		public IActionResult PostWithNoParams()
 		{
 			return NoContent();
 		}
 
 		//// POST: api
 		//[HttpPost]
-		//public void Post([FromBody] string valueString)
+		//public IActionResult PostWithStringParam([FromBody] string param1)
 		//{
+		//	return NoContent();
 		//}
 
 		//// POST: api
