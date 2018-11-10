@@ -124,8 +124,8 @@ namespace TemplateTesterTests
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
-			response.Content.Headers.ContentType.Should().BeNull();
-			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
+			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
+			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
 		}
 	}
 }
