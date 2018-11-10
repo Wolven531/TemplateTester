@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json.Linq;
 using TemplateTester.Models;
 
 namespace TemplateTester.Controllers
@@ -30,6 +31,13 @@ namespace TemplateTester.Controllers
 		[HttpPost]
 		public IActionResult PostWithNoParams()
 		{
+			if (Request.ContentLength > 0)
+			{
+				return BadRequest(new JObject
+				{
+					["error"] = "POST request to this endpoint should not have content"
+				});
+			}
 			return NoContent();
 		}
 
