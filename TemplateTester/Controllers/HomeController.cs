@@ -31,7 +31,7 @@ namespace TemplateTester.Controllers
 		[HttpPost]
 		public IActionResult PostWithNoParams()
 		{
-			if (Request.ContentLength > 0)
+			if (Request.Body.Length > 0 || Request.ContentLength > 0)
 			{
 				return BadRequest(new JObject
 				{
