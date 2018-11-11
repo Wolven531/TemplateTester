@@ -8,6 +8,14 @@ This repository is for the following purposes:
 * dotnet template can be used to quickly generate PoC prototypes
 * Ensure structure is in place for SPA publishing and testing
 
+## Current Code Coverage
+
+![Combined Coverage](/TemplateTesterTests/coverage-report/badge_combined.svg) Combined Coverage (SVG that animates between Branch and Line)
+
+![Branch Coverage](/TemplateTesterTests/coverage-report/badge_branchcoverage.svg) Branch Coverage
+
+![Line Coverage](/TemplateTesterTests/coverage-report/badge_linecoverage.svg) Line Coverage
+
 ## Generating Code Coverage
 
 Run the following command in PowerShell from the root directory to generate a coverage report. Inspired by [this article](https://medium.com/agilix/collecting-test-coverage-using-coverlet-and-sonarqube-for-a-net-core-project-ef4a507d4b28)
