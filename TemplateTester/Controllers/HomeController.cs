@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -13,21 +14,18 @@ namespace TemplateTester.Controllers
 	[ApiController]
 	public class HomeController : ControllerBase
 	{
-		// GET: api/Home
 		[HttpGet]
 		public IEnumerable<string> Get()
 		{
 			return new string[] { "value1", "value2" };
 		}
 
-		// GET: api/Home/5
 		[HttpGet("{id}", Name = "Get")]
 		public string Get(int id)
 		{
 			return "value";
 		}
 
-		// POST: api
 		[HttpPost]
 		public IActionResult PostWithNoParams()
 		{
@@ -41,18 +39,12 @@ namespace TemplateTester.Controllers
 			return NoContent();
 		}
 
-		//// POST: api
-		//[HttpPost]
-		//public IActionResult PostWithStringParam([FromBody] string param1)
-		//{
-		//	return NoContent();
-		//}
-
-		//// POST: api
-		//[HttpPost]
-		//public void Post([FromBody] JsonContent valueJson)
-		//{
-		//}
+		[Route("entities")]
+		[HttpPost]
+		public IActionResult PostWithModelParam([FromBody] SimpleEntity newEntity)
+		{
+			return Ok();
+		}
 
 		//// PUT: api/Home/5
 		//[HttpPut("{id}")]
