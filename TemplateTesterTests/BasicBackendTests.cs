@@ -87,28 +87,16 @@ namespace TemplateTesterTests
 		public async Task PostAPIRoot_WhenInvokedWithoutDataInBody_ShouldReturnNoContent()
 		{
 			// Arrange
-			//var expectedResponse = string.Empty;
 			var client = _Server.CreateClient();
-			//var uploadData = new JObject { ["value"] = "uploadValue" };
 
 			// Act
-			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None), Encoding.UTF8, _JSONContentType.MediaType));
-			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None), Encoding.UTF8));
-			//var response = await client.PostAsync("/api", new StringContent(uploadData.ToString(Formatting.None)));
-			//var response = await client.PostAsync("/api", new StringContent(string.Empty));
 			var response = await client.PostAsync("/api", null);
-			//var postContent = new MultipartFormDataContent();
-			//postContent.Add(new StringContent("asdf"), "value");
-			//var response = await client.PostAsync("/api", postContent);
-			//var response = await client.PostAsync("/api", new StringContent("value=qwer"));
-			//var response = await client.PostAsync("/api", new JsonContent("value=qwer"));
 			response.EnsureSuccessStatusCode();
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
 			response.Content.Headers.ContentType.Should().BeNull();
 			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
-			//responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 
 		// TODO: fix test to test param POSTing properly
