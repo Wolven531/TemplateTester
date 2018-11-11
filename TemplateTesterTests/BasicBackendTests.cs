@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -48,9 +49,9 @@ namespace TemplateTesterTests
 		public async Task GetAPIRoot_WhenInvoked_ShouldReturnJSONArrayOfStrings()
 		{
 			// Arrange
-			var expectedResponse = new string[]
+			var expectedResponse = new Dictionary<string, Uri>
 			{
-				"value1", "value2"
+				{ "root", new Uri($"{_ServerURL_HTTPS}/") }
 			};
 			var client = _Server.CreateClient();
 
