@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -52,7 +53,9 @@ namespace TemplateTester.Controllers
 		[HttpPost]
 		public IActionResult PostWithNoParams()
 		{
-			if (Request.Body.Length > 0 || Request.ContentLength > 0)
+			var requestBody = new StreamReader(Request.Body).ReadToEnd();
+
+			if (Request.ContentLength > 0 || requestBody.Length > 0)
 			{
 				return BadRequest(new JObject
 				{
