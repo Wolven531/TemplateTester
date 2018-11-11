@@ -113,19 +113,23 @@ namespace TemplateTesterTests
 
 		// TODO: fix test to test param POSTing properly
 		[Fact]
-		public async Task PostAPIRoot_WhenInvokedWithStringDataInBody_ShouldReturnNoContent()
+		public async Task PostAPIRoot_WhenInvokedWithSurplusDataInBody_ShouldReturnBadRequest()
 		{
 			// Arrange
 			var client = _Server.CreateClient();
 
 			// Act
 			var response = await client.PostAsync("/api", new StringContent("param1=qwer"));
-			response.EnsureSuccessStatusCode();
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
 			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			var expectedResponse = new JObject
+			{
+				["error"] = "POST request to this endpoint should not have content"
+			}.ToString(Formatting.None);
+			responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 	}
 }
