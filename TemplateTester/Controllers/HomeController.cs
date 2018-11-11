@@ -14,10 +14,33 @@ namespace TemplateTester.Controllers
 	[ApiController]
 	public class HomeController : ControllerBase
 	{
-		[HttpGet]
-		public IEnumerable<string> Get()
+		private Dictionary<string, Uri> _Endpoints;
+
+		private Dictionary<string, Uri> GenerateEndpointMap(Uri baseAddress)
 		{
-			return new string[] { "value1", "value2" };
+			var result = new Dictionary<string, Uri>
+			{
+				{ "root", new Uri($"{baseAddress}") }
+			};
+
+			return result;
+		}
+
+		/// <summary>
+		/// This endpoint should be used to return information about this API, since
+		/// it is a simple GET request at the API root
+		/// </summary>
+		/// <returns>A <code>Dictionary<string, Uri></code> filled with endpoint names mapped
+		/// to the URI at which they can be reached</returns>
+		[HttpGet]
+		public Dictionary<string, Uri> Get()
+		{
+			if (_Endpoints == null)
+			{
+				_Endpoints = GenerateEndpointMap(new Uri($"{Request.Scheme}://{Request.Host.Host}:{Request.Host.Port}"));
+			}
+
+			return _Endpoints;
 		}
 
 		[HttpGet("{id}", Name = "Get")]
