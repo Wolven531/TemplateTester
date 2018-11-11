@@ -99,7 +99,6 @@ namespace TemplateTesterTests
 			response.StatusCode.Should().Be(HttpStatusCode.NoContent);
 		}
 
-		// TODO: fix test to test param POSTing properly
 		[Fact]
 		public async Task PostAPIRoot_WhenInvokedWithSurplusDataInBody_ShouldReturnBadRequest()
 		{
@@ -118,6 +117,30 @@ namespace TemplateTesterTests
 				["error"] = "POST request to this endpoint should not have content"
 			}.ToString(Formatting.None);
 			responseString.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		[Fact]
+		public async Task PostAPIRoot_WhenInvokedWithSimpleEntityInBody_ShouldReturnOk()
+		{
+			// Arrange
+			var newEntity = new SimpleEntity("simple name 1");
+			var jEntity = JToken.FromObject(newEntity);
+			var uploadData = new JsonContent(jEntity);
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.PostAsync("/api/entities", uploadData);
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.StatusCode.Should().Be(HttpStatusCode.OK);
+			//response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			//var expectedResponse = new JObject
+			//{
+			//	["error"] = "POST request to this endpoint should not have content"
+			//}.ToString(Formatting.None);
+			//responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 	}
 }
