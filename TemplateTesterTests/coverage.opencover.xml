@@ -1,17 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageSession>
-  <Summary numSequencePoints="86" visitedSequencePoints="42" numBranchPoints="86" visitedBranchPoints="42" sequenceCoverage="0.488" branchCoverage="0.488" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="2" numClasses="8" visitedMethods="5" numMethods="21" />
+  <Summary numSequencePoints="122" visitedSequencePoints="76" numBranchPoints="122" visitedBranchPoints="76" sequenceCoverage="0.623" branchCoverage="0.623" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="4" numClasses="10" visitedMethods="12" numMethods="27" />
   <Modules>
-    <Module hash="14B752C9-28B9-4A24-8B17-B9E20B5E02C6">
+    <Module hash="86C13495-1488-4C18-9978-7F7C2A3CB1B2">
       <ModulePath>TemplateTester.dll</ModulePath>
-      <ModuleTime>2018-11-01T09:30:33</ModuleTime>
+      <ModuleTime>2018-11-11T07:34:17</ModuleTime>
       <ModuleName>TemplateTester</ModuleName>
       <Files>
         <File uid="1" fullPath="D:\repos\TemplateTester\TemplateTester\Program.cs" />
         <File uid="2" fullPath="D:\repos\TemplateTester\TemplateTester\Startup.cs" />
         <File uid="3" fullPath="D:\repos\TemplateTester\TemplateTester\Pages\Error.cshtml.cs" />
-        <File uid="4" fullPath="D:\repos\TemplateTester\TemplateTester\Controllers\HomeController.cs" />
-        <File uid="5" fullPath="D:\repos\TemplateTester\TemplateTester\Controllers\SampleDataController.cs" />
+        <File uid="4" fullPath="D:\repos\TemplateTester\TemplateTester\Models\JsonContent.cs" />
+        <File uid="5" fullPath="D:\repos\TemplateTester\TemplateTester\Models\SimpleEntity.cs" />
+        <File uid="6" fullPath="D:\repos\TemplateTester\TemplateTester\Controllers\HomeController.cs" />
+        <File uid="7" fullPath="D:\repos\TemplateTester\TemplateTester\Controllers\SampleDataController.cs" />
       </Files>
       <Classes>
         <Class>
@@ -66,17 +68,17 @@
               <Name>System.Void TemplateTester.Startup::ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="2" upsid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="23" ordinal="1" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="26" ordinal="2" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="27" ordinal="3" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="28" ordinal="4" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="29" ordinal="5" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="30" ordinal="6" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="22" ordinal="0" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="23" ordinal="1" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="26" ordinal="2" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="27" ordinal="3" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="28" ordinal="4" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="29" ordinal="5" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="30" ordinal="6" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="1" upsid="26" ordinal="0" path="0" offset="21" offsetend="23" sl="26" fileid="2" />
-                <BranchPoint vc="2" upsid="26" ordinal="1" path="1" offset="21" offsetend="46" sl="26" fileid="2" />
+                <BranchPoint vc="5" upsid="26" ordinal="1" path="1" offset="21" offsetend="46" sl="26" fileid="2" />
               </BranchPoints>
               <MethodPoint vc="7" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="22" ec="1" el="30" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
             </Method>
@@ -86,40 +88,40 @@
               <Name>System.Void TemplateTester.Startup::Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="2" upsid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="35" ordinal="1" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="34" ordinal="0" sl="34" sc="1" el="34" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="35" ordinal="1" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="2" />
                 <SequencePoint vc="0" upsid="36" ordinal="2" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="2" />
                 <SequencePoint vc="0" upsid="37" ordinal="3" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="2" />
                 <SequencePoint vc="0" upsid="38" ordinal="4" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="40" ordinal="5" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="41" ordinal="6" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="42" ordinal="7" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="45" ordinal="9" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="46" ordinal="10" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="47" ordinal="11" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="49" ordinal="12" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="50" ordinal="13" sl="50" sc="1" el="50" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="51" ordinal="14" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="52" ordinal="15" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="53" ordinal="16" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="54" ordinal="17" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="56" ordinal="18" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="57" ordinal="19" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="58" ordinal="20" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="59" ordinal="21" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="60" ordinal="22" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="61" ordinal="23" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="62" ordinal="24" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="63" ordinal="25" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="4" upsid="64" ordinal="26" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="65" ordinal="27" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="40" ordinal="5" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="41" ordinal="6" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="42" ordinal="7" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="43" ordinal="8" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="45" ordinal="9" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="46" ordinal="10" sl="46" sc="1" el="46" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="47" ordinal="11" sl="47" sc="1" el="47" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="49" ordinal="12" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="50" ordinal="13" sl="50" sc="1" el="50" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="51" ordinal="14" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="52" ordinal="15" sl="52" sc="1" el="52" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="53" ordinal="16" sl="53" sc="1" el="53" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="54" ordinal="17" sl="54" sc="1" el="54" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="56" ordinal="18" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="57" ordinal="19" sl="57" sc="1" el="57" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="58" ordinal="20" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="59" ordinal="21" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="60" ordinal="22" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="61" ordinal="23" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="62" ordinal="24" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="63" ordinal="25" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="64" ordinal="26" sl="64" sc="1" el="64" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="65" ordinal="27" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints>
                 <BranchPoint vc="0" upsid="35" ordinal="0" path="0" offset="27" offsetend="29" sl="35" fileid="2" />
-                <BranchPoint vc="2" upsid="35" ordinal="1" path="1" offset="27" offsetend="40" sl="35" fileid="2" />
+                <BranchPoint vc="5" upsid="35" ordinal="1" path="1" offset="27" offsetend="40" sl="35" fileid="2" />
                 <BranchPoint vc="1" upsid="49" ordinal="2" path="0" offset="89" offsetend="91" sl="49" fileid="2" />
-                <BranchPoint vc="2" upsid="49" ordinal="3" path="1" offset="89" offsetend="114" sl="49" fileid="2" />
+                <BranchPoint vc="5" upsid="49" ordinal="3" path="1" offset="89" offsetend="114" sl="49" fileid="2" />
               </BranchPoints>
               <MethodPoint vc="25" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="34" ec="1" el="65" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
             </Method>
@@ -129,10 +131,10 @@
               <Name>System.Void TemplateTester.Startup::.ctor(Microsoft.Extensions.Configuration.IConfiguration)</Name>
               <FileRef uid="2" />
               <SequencePoints>
-                <SequencePoint vc="2" upsid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="2" upsid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="5" upsid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="4" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="13" ec="1" el="16" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
@@ -191,70 +193,186 @@
           </Methods>
         </Class>
         <Class>
-          <Summary numSequencePoints="12" visitedSequencePoints="6" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0.5" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="5" />
+          <Summary numSequencePoints="13" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0.385" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="4" />
+          <FullName>TemplateTester.Models.JsonContent</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void TemplateTester.Models.JsonContent::.ctor()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="0" upsid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="13" ec="1" el="16" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void TemplateTester.Models.JsonContent::.ctor(System.String)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="0" upsid="18" ordinal="0" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="19" ordinal="1" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="20" ordinal="2" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="0" upsid="21" ordinal="3" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="18" ec="1" el="21" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void TemplateTester.Models.JsonContent::.ctor(Newtonsoft.Json.Linq.JToken)</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="1" upsid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="24" ordinal="1" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="25" ordinal="2" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="26" ordinal="3" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="4" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="23" ec="1" el="26" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void TemplateTester.Models.JsonContent::.cctor()</Name>
+              <FileRef uid="4" />
+              <SequencePoints>
+                <SequencePoint vc="1" upsid="11" ordinal="0" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="4" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="11" ec="1" el="11" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="5" visitedSequencePoints="5" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="1" numClasses="1" visitedMethods="2" numMethods="2" />
+          <FullName>TemplateTester.Models.SimpleEntity</FullName>
+          <Methods>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="1" visitedSequencePoints="1" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.String TemplateTester.Models.SimpleEntity::get_ReadableName()</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="2" upsid="15" ordinal="0" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="1" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="15" ec="1" el="15" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="4" visitedSequencePoints="4" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Void TemplateTester.Models.SimpleEntity::.ctor(System.String)</Name>
+              <FileRef uid="5" />
+              <SequencePoints>
+                <SequencePoint vc="2" upsid="10" ordinal="0" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" upsid="11" ordinal="1" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" upsid="12" ordinal="2" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="2" upsid="13" ordinal="3" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="5" />
+              </SequencePoints>
+              <BranchPoints />
+              <MethodPoint vc="4" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="10" ec="1" el="13" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+            </Method>
+          </Methods>
+        </Class>
+        <Class>
+          <Summary numSequencePoints="30" visitedSequencePoints="30" numBranchPoints="6" visitedBranchPoints="5" sequenceCoverage="1" branchCoverage="0.833" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="1" numClasses="1" visitedMethods="5" numMethods="5" />
           <FullName>TemplateTester.Controllers.HomeController</FullName>
           <Methods>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
-              <Name>System.Collections.Generic.IEnumerable`1&lt;System.String&gt; TemplateTester.Controllers.HomeController::Get()</Name>
-              <FileRef uid="4" />
+              <Name>System.Collections.Generic.Dictionary`2&lt;System.String,System.Uri&gt; TemplateTester.Controllers.HomeController::GenerateEndpointMap(System.Uri)</Name>
+              <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="1" upsid="17" ordinal="0" sl="17" sc="1" el="17" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="1" upsid="18" ordinal="1" sl="18" sc="1" el="18" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="1" upsid="19" ordinal="2" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="21" ordinal="0" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="22" ordinal="1" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="23" ordinal="2" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="24" ordinal="3" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="25" ordinal="4" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="27" ordinal="5" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="28" ordinal="6" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="3" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="17" ec="1" el="19" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+              <MethodPoint vc="7" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="21" ec="1" el="28" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+            </Method>
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="1" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="7" visitedSequencePoints="7" numBranchPoints="2" visitedBranchPoints="2" sequenceCoverage="1" branchCoverage="1" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
+              <MetadataToken />
+              <Name>System.Collections.Generic.Dictionary`2&lt;System.String,System.Uri&gt; TemplateTester.Controllers.HomeController::Get()</Name>
+              <FileRef uid="6" />
+              <SequencePoints>
+                <SequencePoint vc="1" upsid="38" ordinal="0" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="39" ordinal="1" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="40" ordinal="2" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="41" ordinal="3" sl="41" sc="1" el="41" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="42" ordinal="4" sl="42" sc="1" el="42" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="44" ordinal="5" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="45" ordinal="6" sl="45" sc="1" el="45" ec="2" bec="0" bev="0" fileid="6" />
+              </SequencePoints>
+              <BranchPoints>
+                <BranchPoint vc="1" upsid="39" ordinal="0" path="0" offset="12" offsetend="14" sl="39" fileid="6" />
+                <BranchPoint vc="1" upsid="39" ordinal="1" path="1" offset="12" offsetend="97" sl="39" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="7" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="38" ec="1" el="45" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
               <Name>System.String TemplateTester.Controllers.HomeController::Get(System.Int32)</Name>
-              <FileRef uid="4" />
+              <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="1" upsid="24" ordinal="0" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="1" upsid="25" ordinal="1" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="1" upsid="26" ordinal="2" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="49" ordinal="0" sl="49" sc="1" el="49" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="50" ordinal="1" sl="50" sc="1" el="50" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="51" ordinal="2" sl="51" sc="1" el="51" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="3" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="24" ec="1" el="26" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+              <MethodPoint vc="3" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="49" ec="1" el="51" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="2" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0.75" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="10" visitedSequencePoints="10" numBranchPoints="4" visitedBranchPoints="3" sequenceCoverage="1" branchCoverage="0.75" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
-              <Name>System.Void TemplateTester.Controllers.HomeController::Post(System.String)</Name>
-              <FileRef uid="4" />
+              <Name>Microsoft.AspNetCore.Mvc.IActionResult TemplateTester.Controllers.HomeController::PostWithNoParams()</Name>
+              <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="0" upsid="32" ordinal="1" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="2" upsid="55" ordinal="0" sl="55" sc="1" el="55" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="2" upsid="56" ordinal="1" sl="56" sc="1" el="56" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="2" upsid="58" ordinal="2" sl="58" sc="1" el="58" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="59" ordinal="3" sl="59" sc="1" el="59" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="60" ordinal="4" sl="60" sc="1" el="60" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="61" ordinal="5" sl="61" sc="1" el="61" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="62" ordinal="6" sl="62" sc="1" el="62" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="63" ordinal="7" sl="63" sc="1" el="63" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="65" ordinal="8" sl="65" sc="1" el="65" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="2" upsid="66" ordinal="9" sl="66" sc="1" el="66" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
-              <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="31" ec="1" el="32" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+              <BranchPoints>
+                <BranchPoint vc="2" upsid="58" ordinal="0" path="0" offset="56" offsetend="58" sl="58" fileid="6" />
+                <BranchPoint vc="0" upsid="58" ordinal="1" path="1" offset="56" offsetend="69" sl="58" fileid="6" />
+                <BranchPoint vc="1" upsid="58" ordinal="2" path="0" offset="72" offsetend="74" sl="58" fileid="6" />
+                <BranchPoint vc="1" upsid="58" ordinal="3" path="1" offset="72" offsetend="112" sl="58" fileid="6" />
+              </BranchPoints>
+              <MethodPoint vc="10" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="55" ec="1" el="66" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
-            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="2" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
+            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="1" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
+              <Summary numSequencePoints="3" visitedSequencePoints="3" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="1" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="1" numMethods="1" />
               <MetadataToken />
-              <Name>System.Void TemplateTester.Controllers.HomeController::Put(System.Int32,System.String)</Name>
-              <FileRef uid="4" />
+              <Name>Microsoft.AspNetCore.Mvc.IActionResult TemplateTester.Controllers.HomeController::PostWithModelParam(TemplateTester.Models.SimpleEntity)</Name>
+              <FileRef uid="6" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="37" ordinal="0" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="0" upsid="38" ordinal="1" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="1" upsid="71" ordinal="0" sl="71" sc="1" el="71" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="72" ordinal="1" sl="72" sc="1" el="72" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="1" upsid="73" ordinal="2" sl="73" sc="1" el="73" ec="2" bec="0" bev="0" fileid="6" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="37" ec="1" el="38" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
-            </Method>
-            <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="False" isSetter="False" isStatic="True">
-              <Summary numSequencePoints="2" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
-              <MetadataToken />
-              <Name>System.Void TemplateTester.Controllers.HomeController::Delete(System.Int32)</Name>
-              <FileRef uid="4" />
-              <SequencePoints>
-                <SequencePoint vc="0" upsid="43" ordinal="0" sl="43" sc="1" el="43" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="0" upsid="44" ordinal="1" sl="44" sc="1" el="44" ec="2" bec="0" bev="0" fileid="4" />
-              </SequencePoints>
-              <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="43" ec="1" el="44" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
+              <MethodPoint vc="3" upsid="0" p8:type="SequencePoint" ordinal="4" offset="4" sc="0" sl="71" ec="1" el="73" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -266,34 +384,34 @@
               <Summary numSequencePoints="9" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.Collections.Generic.IEnumerable`1&lt;TemplateTester.Controllers.SampleDataController/WeatherForecast&gt; TemplateTester.Controllers.SampleDataController::WeatherForecasts(System.Int32)</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="20" ordinal="1" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="21" ordinal="2" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="22" ordinal="3" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="23" ordinal="4" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="24" ordinal="5" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="25" ordinal="6" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="26" ordinal="7" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="27" ordinal="8" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="19" ordinal="0" sl="19" sc="1" el="19" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="20" ordinal="1" sl="20" sc="1" el="20" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="21" ordinal="2" sl="21" sc="1" el="21" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="22" ordinal="3" sl="22" sc="1" el="22" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="23" ordinal="4" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="24" ordinal="5" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="25" ordinal="6" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="26" ordinal="7" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="27" ordinal="8" sl="27" sc="1" el="27" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="19" ec="1" el="27" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="19" ec="1" el="27" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="True" isGetter="False" isSetter="False" isStatic="True">
               <Summary numSequencePoints="4" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.Void TemplateTester.Controllers.SampleDataController::.cctor()</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="13" ordinal="1" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="14" ordinal="2" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="15" ordinal="3" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="12" ordinal="0" sl="12" sc="1" el="12" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="13" ordinal="1" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="14" ordinal="2" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="15" ordinal="3" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="12" ec="1" el="15" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="12" ec="1" el="15" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
@@ -305,58 +423,58 @@
               <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.String TemplateTester.Controllers.SampleDataController/WeatherForecast::get_DateFormatted()</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="31" ordinal="0" sl="31" sc="1" el="31" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="31" ec="1" el="31" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="31" ec="1" el="31" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.Int32 TemplateTester.Controllers.SampleDataController/WeatherForecast::get_TemperatureC()</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="32" ordinal="0" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="32" ordinal="0" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="32" ec="1" el="32" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="1" offset="1" sc="0" sl="32" ec="1" el="32" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="1" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.String TemplateTester.Controllers.SampleDataController/WeatherForecast::get_Summary()</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="33" ordinal="0" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="33" ordinal="0" sl="33" sc="1" el="33" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="33" ec="1" el="33" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="33" ec="1" el="33" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
             <Method cyclomaticComplexity="0" nPathComplexity="0" sequenceCoverage="0" branchCoverage="0" isConstructor="False" isGetter="True" isSetter="False" isStatic="True">
               <Summary numSequencePoints="3" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.Int32 TemplateTester.Controllers.SampleDataController/WeatherForecast::get_TemperatureF()</Name>
-              <FileRef uid="5" />
+              <FileRef uid="7" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="38" ordinal="0" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="39" ordinal="1" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="5" />
-                <SequencePoint vc="0" upsid="40" ordinal="2" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="5" />
+                <SequencePoint vc="0" upsid="38" ordinal="0" sl="38" sc="1" el="38" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="39" ordinal="1" sl="39" sc="1" el="39" ec="2" bec="0" bev="0" fileid="7" />
+                <SequencePoint vc="0" upsid="40" ordinal="2" sl="40" sc="1" el="40" ec="2" bec="0" bev="0" fileid="7" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="38" ec="1" el="40" bec="0" bev="0" fileid="5" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="3" offset="3" sc="0" sl="38" ec="1" el="40" bec="0" bev="0" fileid="7" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
       </Classes>
     </Module>
-    <Module hash="711E282F-4702-4FA3-9F47-00A67A7E3F3A">
+    <Module hash="E3B6BCD6-AD0F-4433-B9D2-CA1FE9390881">
       <ModulePath>TemplateTester.Views.dll</ModulePath>
-      <ModuleTime>2018-11-01T09:30:33</ModuleTime>
+      <ModuleTime>2018-11-11T07:34:17</ModuleTime>
       <ModuleName>TemplateTester.Views</ModuleName>
       <Files>
-        <File uid="6" fullPath="D:\repos\TemplateTester\TemplateTester\Pages\Error.cshtml" />
+        <File uid="8" fullPath="D:\repos\TemplateTester\TemplateTester\Pages\Error.cshtml" />
       </Files>
       <Classes>
         <Class>
@@ -367,16 +485,16 @@
               <Summary numSequencePoints="5" visitedSequencePoints="0" numBranchPoints="0" visitedBranchPoints="0" sequenceCoverage="0" branchCoverage="0" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="0" numClasses="0" visitedMethods="0" numMethods="1" />
               <MetadataToken />
               <Name>System.Void TemplateTester.Pages.Pages_Error/&lt;ExecuteAsync&gt;d__0::MoveNext()</Name>
-              <FileRef uid="6" />
+              <FileRef uid="8" />
               <SequencePoints>
-                <SequencePoint vc="0" upsid="4" ordinal="0" sl="4" sc="1" el="4" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" upsid="10" ordinal="1" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" upsid="11" ordinal="2" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" upsid="13" ordinal="3" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="6" />
-                <SequencePoint vc="0" upsid="15" ordinal="4" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="6" />
+                <SequencePoint vc="0" upsid="4" ordinal="0" sl="4" sc="1" el="4" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" upsid="10" ordinal="1" sl="10" sc="1" el="10" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" upsid="11" ordinal="2" sl="11" sc="1" el="11" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" upsid="13" ordinal="3" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="8" />
+                <SequencePoint vc="0" upsid="15" ordinal="4" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="8" />
               </SequencePoints>
               <BranchPoints />
-              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="4" ec="1" el="15" bec="0" bev="0" fileid="6" xmlns:p8="xsi" />
+              <MethodPoint vc="0" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="4" ec="1" el="15" bec="0" bev="0" fileid="8" xmlns:p8="xsi" />
             </Method>
           </Methods>
         </Class>
