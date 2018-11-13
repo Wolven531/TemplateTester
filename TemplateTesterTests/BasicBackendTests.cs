@@ -1,5 +1,6 @@
 using FluentAssertions;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.TestHost;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -46,12 +47,27 @@ namespace TemplateTesterTests
 		}
 
 		[Fact]
-		public async Task GetAPIRoot_WhenInvoked_ShouldReturnJSONArrayOfStrings()
+		public async Task GetAPIRoot_WhenInvoked_ShouldReturnMapOfEndpoints()
 		{
 			// Arrange
-			var expectedResponse = new Dictionary<string, Uri>
+			var expectedResponse = new Dictionary<string, JObject>
 			{
-				{ "root", new Uri($"{_ServerURL_HTTPS}/") }
+				{
+					"root",
+					new JObject
+					{
+						["address"] = new Uri($"{_ServerURL_HTTPS}/"),
+						["method"] = HttpMethods.Get
+					}
+				},
+				{
+					"endpointDetails",
+					new JObject
+					{
+						["address"] = new Uri($"{_ServerURL_HTTPS}/{{endpoint}}"),
+						["method"] = HttpMethods.Get
+					}
+				}
 			};
 			var client = _Server.CreateClient();
 
@@ -67,20 +83,44 @@ namespace TemplateTesterTests
 		}
 
 		[Fact]
-		public async Task GetAPIRoot_WhenInvokedWithParameter_ShouldReturnString()
+		public async Task GetAPIRoot_WhenInvokedWithValidEndpoint_ShouldReturnEndpointDetails()
 		{
 			// Arrange
-			var expectedResponse = "value";
+			var expectedResponse = new JObject
+			{
+				["address"] = new Uri($"{_ServerURL_HTTPS}/"),
+				["method"] = HttpMethods.Get
+			}.ToString(Formatting.None);
 			var client = _Server.CreateClient();
 
 			// Act
-			var response = await client.GetAsync("/api/999");
+			var response = await client.GetAsync("/api/root");
 			response.EnsureSuccessStatusCode();
 			var responseString = await response.Content.ReadAsStringAsync();
 
 			// Assert
-			response.Content.Headers.ContentType.Should().Be(_TextContentType);
+			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
 			response.StatusCode.Should().Be(HttpStatusCode.OK);
+			responseString.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		[Fact]
+		public async Task GetAPIRoot_WhenInvokedWithNonsenseEndpoint_ShouldReturnBadRequestWithErrorMessage()
+		{
+			// Arrange
+			var expectedResponse = new JObject
+			{
+				["error"] = "GET request to this endpoint should have valid endpoint slug"
+			}.ToString(Formatting.None);
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.GetAsync("/api/blah");
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 			responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 

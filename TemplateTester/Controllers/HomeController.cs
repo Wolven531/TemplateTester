@@ -15,13 +15,28 @@ namespace TemplateTester.Controllers
 	[ApiController]
 	public class HomeController : ControllerBase
 	{
-		private Dictionary<string, Uri> _Endpoints;
+		private Dictionary<string, JObject> _Endpoints;
 
-		private Dictionary<string, Uri> GenerateEndpointMap(Uri baseAddress)
+		private Dictionary<string, JObject> GenerateEndpointMap(Uri baseAddress)
 		{
-			var result = new Dictionary<string, Uri>
+			var result = new Dictionary<string, JObject>
 			{
-				{ "root", new Uri($"{baseAddress}") }
+				{
+					"root",
+					new JObject
+					{
+						["address"] = new Uri($"{baseAddress}"),
+						["method"] = HttpMethods.Get
+					}
+				},
+				{
+					"endpointDetails",
+					new JObject
+					{
+						["address"] = new Uri($"{baseAddress}{{endpoint}}"),
+						["method"] = HttpMethods.Get
+					}
+				}
 			};
 
 			return result;
@@ -34,20 +49,33 @@ namespace TemplateTester.Controllers
 		/// <returns>A <code>Dictionary<string, Uri></code> filled with endpoint names mapped
 		/// to the URI at which they can be reached</returns>
 		[HttpGet]
-		public Dictionary<string, Uri> Get()
+		public IActionResult Get()
 		{
 			if (_Endpoints == null)
 			{
 				_Endpoints = GenerateEndpointMap(new Uri($"{Request.Scheme}://{Request.Host.Host}:{Request.Host.Port}"));
 			}
 
-			return _Endpoints;
+			return Ok(JToken.FromObject(_Endpoints));
 		}
 
-		[HttpGet("{id}", Name = "Get")]
-		public string Get(int id)
+		[HttpGet("{endpoint}")]
+		public IActionResult Get([FromRoute] string endpoint)
 		{
-			return "value";
+			if (_Endpoints == null)
+			{
+				_Endpoints = GenerateEndpointMap(new Uri($"{Request.Scheme}://{Request.Host.Host}:{Request.Host.Port}"));
+			}
+
+			if (_Endpoints.TryGetValue(endpoint, out var jEndpointDetails))
+			{
+				return Ok(jEndpointDetails);
+			}
+
+			return BadRequest(new JObject
+			{
+				["error"] = "GET request to this endpoint should have valid endpoint slug"
+			});
 		}
 
 		[HttpPost]
