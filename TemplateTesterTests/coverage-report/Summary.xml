@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>11/11/2018 - 12:34:32 PM</Generatedon>
+    <Generatedon>11/12/2018 - 06:03:57 PM</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>2</Assemblies>
     <Classes>8</Classes>
     <Files>8</Files>
-    <Coveredlines>76</Coveredlines>
+    <Coveredlines>101</Coveredlines>
     <Uncoveredlines>46</Uncoveredlines>
-    <Coverablelines>122</Coverablelines>
-    <Totallines>313</Totallines>
-    <Linecoverage>62.2%</Linecoverage>
-    <Branchcoverage>62.5%</Branchcoverage>
+    <Coverablelines>147</Coverablelines>
+    <Totallines>341</Totallines>
+    <Linecoverage>68.7%</Linecoverage>
+    <Branchcoverage>70%</Branchcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="TemplateTester" classes="7" coverage="64.9" coveredlines="76" coverablelines="117" totallines="290" branchcoverage="62.5" coveredbranches="10" totalbranches="16">
-      <Class name="TemplateTester.Controllers.HomeController" coverage="100" coveredlines="30" coverablelines="30" totallines="87" branchcoverage="83.3" coveredbranches="5" totalbranches="6" />
+    <Assembly name="TemplateTester" classes="7" coverage="71.1" coveredlines="101" coverablelines="142" totallines="318" branchcoverage="70" coveredbranches="14" totalbranches="20">
+      <Class name="TemplateTester.Controllers.HomeController" coverage="100" coveredlines="55" coverablelines="55" totallines="115" branchcoverage="90" coveredbranches="9" totalbranches="10" />
       <Class name="TemplateTester.Controllers.SampleDataController" coverage="0" coveredlines="0" coverablelines="19" totallines="44" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.JsonContent" coverage="38.4" coveredlines="5" coverablelines="13" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.SimpleEntity" coverage="100" coveredlines="5" coverablelines="5" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
