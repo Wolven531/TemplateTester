@@ -1,22 +1,39 @@
-﻿const incrementCountType = 'INCREMENT_COUNT'
-const decrementCountType = 'DECREMENT_COUNT'
+﻿const alterByAmountType = 'alter_by_amount'
+const incrementCountType = 'increment_count'
+const decrementCountType = 'decrement_count'
+
 const initialState = { count: 0 }
 
-export const actionCreators = {
-	increment: () => ({ type: incrementCountType }),
-	decrement: () => ({ type: decrementCountType })
+const actionCreators = {
+	alterByAmount: (deltaAmount) => ({
+		type: alterByAmountType,
+		payload: deltaAmount
+	}),
+	decrement: () => ({ type: decrementCountType }),
+	increment: () => ({ type: incrementCountType })
 }
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
 	state = state || initialState
 
-	if (action.type === incrementCountType) {
-		return { ...state, count: state.count + 1 }
-	}
+	const { payload, type } = action
+	const { count } = state
 
-	if (action.type === decrementCountType) {
-		return { ...state, count: state.count - 1 }
+	switch (type) {
+		case alterByAmountType:
+			return { ...state, count: count + payload }
+		case decrementCountType:
+			return { ...state, count: count - 1 }
+		case incrementCountType:
+			return { ...state, count: count + 1 }
+		default:
+			break;
 	}
 
 	return state
+}
+
+export {
+	actionCreators,
+	reducer
 }
