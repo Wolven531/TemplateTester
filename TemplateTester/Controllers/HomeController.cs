@@ -46,7 +46,7 @@ namespace TemplateTester.Controllers
 		/// This endpoint should be used to return information about this API, since
 		/// it is a simple GET request at the API root
 		/// </summary>
-		/// <returns>A <code>Dictionary<string, Uri></code> filled with endpoint names mapped
+		/// <returns>A <code>Dictionary<string, JObject></code> filled with endpoint names mapped
 		/// to the URI at which they can be reached</returns>
 		[HttpGet]
 		public IActionResult Get()
@@ -59,6 +59,11 @@ namespace TemplateTester.Controllers
 			return Ok(JToken.FromObject(_Endpoints));
 		}
 
+		/// <summary>
+		/// This endpoint provides more detailed information about a requested endpoint
+		/// </summary>
+		/// <param name="endpoint" type="string"></param>
+		/// <returns></returns>
 		[HttpGet("{endpoint}")]
 		public IActionResult Get([FromRoute] string endpoint)
 		{
