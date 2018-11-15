@@ -21,7 +21,7 @@ This repository is for the following purposes:
 Run the following command in PowerShell from the root directory to generate a coverage report. Inspired by [this article](https://medium.com/agilix/collecting-test-coverage-using-coverlet-and-sonarqube-for-a-net-core-project-ef4a507d4b28)
 
 ```PowerShell
-dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[*]*TemplateTester.Pages*"
 ```
 
 ```Terminal (MacOS)
