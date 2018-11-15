@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System.Diagnostics.CodeAnalysis;
 using TemplateTester.Repositories;
 
 namespace TemplateTester
@@ -33,14 +34,20 @@ namespace TemplateTester
 			});
 		}
 
-		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		[ExcludeFromCodeCoverage]
+		private void SetupDevelopmentExceptionHandlers(IApplicationBuilder app, IHostingEnvironment env)
 		{
 			if (env.IsDevelopment())
 			{
 				app.UseDeveloperExceptionPage();
 			}
-			else
+		}
+
+		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+		public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+		{
+			SetupDevelopmentExceptionHandlers(app, env);
+			if (!env.IsDevelopment())
 			{
 				app.UseExceptionHandler("/Error");
 				app.UseHsts();
