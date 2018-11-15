@@ -8,8 +8,6 @@ using System;
 using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
 using System.Threading.Tasks;
 using TemplateTester;
 using TemplateTester.Models;
@@ -22,13 +20,9 @@ namespace TemplateTesterTests
 	///
 	/// Technique informed by: https://xunit.github.io/docs/comparisons.html
 	/// </summary>
-	public class BasicBackendTests
+	public class BasicBackendTests : IDisposable
 	{
-		private const string _ContentTypeCharSet = "utf-8";
 		private const string _ServerURL_HTTPS = "https://localhost:5310";
-
-		private static readonly MediaTypeHeaderValue _HTMLContentType = new MediaTypeHeaderValue("text/html") { CharSet = _ContentTypeCharSet };
-		private static readonly MediaTypeHeaderValue _TextContentType = new MediaTypeHeaderValue("text/plain") { CharSet = _ContentTypeCharSet };
 
 		private readonly TestServer _Server;
 
@@ -65,6 +59,14 @@ namespace TemplateTesterTests
 					new JObject
 					{
 						["address"] = new Uri($"{_ServerURL_HTTPS}/{{endpoint}}"),
+						["method"] = HttpMethods.Get
+					}
+				},
+				{
+					"entities",
+					new JObject
+					{
+						["address"] = new Uri($"{_ServerURL_HTTPS}/entities"),
 						["method"] = HttpMethods.Get
 					}
 				}
@@ -160,28 +162,9 @@ namespace TemplateTesterTests
 			responseString.Should().BeEquivalentTo(expectedResponse);
 		}
 
-		[Fact]
-		public async Task PostAPIRoot_WhenInvokedWithSimpleEntityInBody_ShouldReturnOk()
+		public void Dispose()
 		{
-			// Arrange
-			var newEntity = new SimpleEntity("simple name 1");
-			var jEntity = JToken.FromObject(newEntity);
-			var uploadData = new JsonContent(jEntity);
-			var client = _Server.CreateClient();
-
-			// Act
-			var response = await client.PostAsync("/api/entities", uploadData);
-			response.EnsureSuccessStatusCode();
-			var responseString = await response.Content.ReadAsStringAsync();
-
-			// Assert
-			response.StatusCode.Should().Be(HttpStatusCode.OK);
-			//response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
-			//var expectedResponse = new JObject
-			//{
-			//	["error"] = "POST request to this endpoint should not have content"
-			//}.ToString(Formatting.None);
-			//responseString.Should().BeEquivalentTo(expectedResponse);
+			_Server.Dispose();
 		}
 	}
 }
