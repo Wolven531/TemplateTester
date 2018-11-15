@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json.Linq;
 using TemplateTester.Models;
+using TemplateTester.Repositories;
 
 namespace TemplateTester.Controllers
 {
@@ -15,6 +16,8 @@ namespace TemplateTester.Controllers
 	[ApiController]
 	public class HomeController : ControllerBase
 	{
+		private readonly IEntityRepository _EntityRepository;
+
 		private Dictionary<string, JObject> _Endpoints;
 
 		private Dictionary<string, JObject> GenerateEndpointMap(Uri baseAddress)
@@ -36,10 +39,29 @@ namespace TemplateTester.Controllers
 						["address"] = new Uri($"{baseAddress}{{endpoint}}"),
 						["method"] = HttpMethods.Get
 					}
+				},
+				{
+					"entities",
+					new JObject
+					{
+						["address"] = new Uri($"{baseAddress}entities"),
+						["method"] = HttpMethods.Get
+					}
 				}
 			};
 
 			return result;
+		}
+
+		public HomeController(IEntityRepository entityRepository)
+		{
+			_EntityRepository = entityRepository;
+		}
+
+		[HttpGet("entities")]
+		public IActionResult GetAllEntities()
+		{
+			return Ok(_EntityRepository.GetAllEntities());
 		}
 
 		/// <summary>
@@ -102,6 +124,8 @@ namespace TemplateTester.Controllers
 		[HttpPost]
 		public IActionResult PostWithModelParam([FromBody] SimpleEntity newEntity)
 		{
+			_EntityRepository.AddEntity(newEntity);
+
 			return Ok();
 		}
 
