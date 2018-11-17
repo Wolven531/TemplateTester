@@ -38,20 +38,55 @@ namespace TemplateTesterTests.Integration
 			};
 		}
 
-		[Fact]
-		public async Task GetAPIHealthEndpoint_WhenInvoked_ShouldReturnOkWithTextContent()
+		[Theory]
+		[InlineData("")]
+		[InlineData("text")]
+		public async Task GetAPIHealthEndpoint_WhenInvokedWithValidTextFormatParameter_ShouldReturnOkWithTextContent(string format)
 		{
 			// Arrange
 			var expectedResponse = new TextContent("Boom, baby!");
 			var client = _Server.CreateClient();
 
 			// Act
-			var response = await client.GetAsync("/api/health");
+			var response = await client.GetAsync($"/api/health?format={format}");
 			response.EnsureSuccessStatusCode();
 
 			// Assert
 			response.Content.Headers.ContentType.Should().Be(TextContent.TextContentType);
 			response.StatusCode.Should().Be(HttpStatusCode.OK);
+			response.Content.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		[Fact]
+		public async Task GetAPIHealthEndpoint_WhenInvokedWithValidHtmlFormatParameter_ShouldReturnOkWithHtmlContent()
+		{
+			// Arrange
+			var expectedResponse = new HtmlContent("<html><head><title>Template Tester API Health Check</title></head><body>Boom, baby!</body></html>");
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.GetAsync("/api/health?format=html");
+			response.EnsureSuccessStatusCode();
+
+			// Assert
+			response.Content.Headers.ContentType.Should().Be(HtmlContent.HtmlContentType);
+			response.StatusCode.Should().Be(HttpStatusCode.OK);
+			response.Content.Should().BeEquivalentTo(expectedResponse);
+		}
+
+		[Fact]
+		public async Task GetAPIHealthEndpoint_WhenInvokedWithoutFormatParameter_ShouldReturnBadRequestWithJsonError()
+		{
+			// Arrange
+			var expectedResponse = new JsonContent(new JObject { ["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]" });
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.GetAsync("/api/health");
+
+			// Assert
+			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 			response.Content.Should().BeEquivalentTo(expectedResponse);
 		}
 
