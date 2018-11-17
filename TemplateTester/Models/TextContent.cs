@@ -15,14 +15,14 @@ namespace TemplateTester.Models
 		//	Headers.ContentType = TextContentType;
 		//}
 
-		//public TextContent(string value) : base(value)
-		//{
-		//	Headers.ContentType = TextContentType;
-		//}
-
-		public TextContent(JToken value) : base(value.ToString(Formatting.None))
+		public TextContent(string value) : base(value)
 		{
 			Headers.ContentType = TextContentType;
 		}
+
+		//public TextContent(JToken value) : base(value.ToString(Formatting.None))
+		//{
+		//	Headers.ContentType = TextContentType;
+		//}
 	}
 }
