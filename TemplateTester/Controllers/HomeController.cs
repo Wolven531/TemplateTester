@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.Http;
+using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using TemplateTester.Models;
 using TemplateTester.Repositories;
@@ -65,9 +68,41 @@ namespace TemplateTester.Controllers
 		}
 
 		[HttpGet("health")]
-		public IActionResult GetAPIHealth()
+		public HttpContent GetAPIHealth([FromQuery] string format = "text")
 		{
-			return Ok("Boom baby!");
+			const string responseText = "Boom baby!";
+
+			if (string.IsNullOrEmpty(format) || format.Equals("text", StringComparison.InvariantCultureIgnoreCase))
+			{
+				return new TextContent(responseText);
+				//return Ok(responseText);
+			}
+			if (format.Equals("html", StringComparison.InvariantCultureIgnoreCase))
+			{
+				//var respContent = new HtmlContent($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
+				//var resp = new HttpWebResponse() {
+				//	ContentType = respContent.Headers.ContentType.MediaType
+				//};
+
+				////resp.StatusCode = HttpStatusCode.OK;
+				//resp.GetResponseStream().WriteAsync(Encoding.UTF8.GetBytes(respContent.ReadAsStringAsync().Result));
+
+				//return (IActionResult) resp;
+				return new HtmlContent($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
+			}
+
+			//Response.StatusCode = (int)HttpStatusCode.BadRequest;
+			//Response.ContentType = JsonContent.JSONContentType.MediaType;
+			//Response.Body.WriteAsync(Encoding.UTF8.GetBytes(new JObject
+			//{
+			//	["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]"
+			//}.ToString(Formatting.None)));
+
+			//return (IActionResult) Response;
+			return new JsonContent(new JObject
+			{
+				["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]"
+			});
 		}
 
 		/// <summary>
