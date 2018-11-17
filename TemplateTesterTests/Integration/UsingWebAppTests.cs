@@ -38,22 +38,22 @@ namespace TemplateTesterTests.Integration
 			};
 		}
 
-		[Fact]
-		public async Task GetServerRoot_WhenInvoked_ShouldReturnNonEmptyHtmlPageInOkResponse()
-		{
-			// Arrange
-			var client = _Server.CreateClient();
+		//[Fact]
+		//public async Task GetServerRoot_WhenInvoked_ShouldReturnNonEmptyHtmlPageInOkResponse()
+		//{
+		//	// Arrange
+		//	var client = _Server.CreateClient();
 
-			// Act
-			var getResponse = await client.GetAsync("/");
-			getResponse.EnsureSuccessStatusCode();
-			var getResponseString = await getResponse.Content.ReadAsStringAsync();
+		//	// Act
+		//	var getResponse = await client.GetAsync("/");
+		//	getResponse.EnsureSuccessStatusCode();
+		//	var getResponseString = await getResponse.Content.ReadAsStringAsync();
 
-			// Assert
-			getResponse.Content.Headers.ContentType.Should().Be(HtmlContent.HtmlContentType);
-			getResponse.StatusCode.Should().Be(HttpStatusCode.OK);
-			getResponseString.Should().NotBeEmpty();
-		}
+		//	// Assert
+		//	getResponse.Content.Headers.ContentType.Should().Be(HtmlContent.HtmlContentType);
+		//	getResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+		//	getResponseString.Should().NotBeEmpty();
+		//}
 
 		public void Dispose()
 		{
