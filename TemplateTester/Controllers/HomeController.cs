@@ -64,6 +64,12 @@ namespace TemplateTester.Controllers
 			return Ok(_EntityRepository.GetAllEntities());
 		}
 
+		[HttpGet("health")]
+		public IActionResult GetAPIHealth()
+		{
+			return Ok("Boom baby!");
+		}
+
 		/// <summary>
 		/// This endpoint should be used to return information about this API, since
 		/// it is a simple GET request at the API root
