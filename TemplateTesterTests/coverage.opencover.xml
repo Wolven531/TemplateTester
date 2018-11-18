@@ -2,9 +2,9 @@
 <CoverageSession>
   <Summary numSequencePoints="158" visitedSequencePoints="152" numBranchPoints="158" visitedBranchPoints="152" sequenceCoverage="0.962" branchCoverage="0.962" maxCyclomaticComplexity="0" minCyclomaticComplexity="0" visitedClasses="6" numClasses="8" visitedMethods="20" numMethods="23" />
   <Modules>
-    <Module hash="5E1D59C1-D0E6-4E4A-8B8D-BAD134904E4A">
+    <Module hash="0CC28B58-3D7E-423D-9BDE-070A521E2C71">
       <ModulePath>TemplateTester.dll</ModulePath>
-      <ModuleTime>2018-11-18T07:33:49</ModuleTime>
+      <ModuleTime>2018-11-18T08:32:23</ModuleTime>
       <ModuleName>TemplateTester</ModuleName>
       <Files>
         <File uid="1" fullPath="C:\repos\TemplateTester\TemplateTester\Startup.cs" />
@@ -42,7 +42,7 @@
                 <SequencePoint vc="10" upsid="28" ordinal="2" sl="28" sc="1" el="28" ec="2" bec="0" bev="0" fileid="1" />
                 <SequencePoint vc="10" upsid="29" ordinal="3" sl="29" sc="1" el="29" ec="2" bec="0" bev="0" fileid="1" />
                 <SequencePoint vc="10" upsid="30" ordinal="4" sl="30" sc="1" el="30" ec="2" bec="0" bev="0" fileid="1" />
-                <SequencePoint vc="9" upsid="32" ordinal="5" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="1" />
+                <SequencePoint vc="10" upsid="32" ordinal="5" sl="32" sc="1" el="32" ec="2" bec="0" bev="0" fileid="1" />
                 <SequencePoint vc="10" upsid="35" ordinal="6" sl="35" sc="1" el="35" ec="2" bec="0" bev="0" fileid="1" />
                 <SequencePoint vc="20" upsid="36" ordinal="7" sl="36" sc="1" el="36" ec="2" bec="0" bev="0" fileid="1" />
                 <SequencePoint vc="20" upsid="37" ordinal="8" sl="37" sc="1" el="37" ec="2" bec="0" bev="0" fileid="1" />
@@ -156,7 +156,7 @@
                 <SequencePoint vc="10" upsid="13" ordinal="0" sl="13" sc="1" el="13" ec="2" bec="0" bev="0" fileid="2" />
                 <SequencePoint vc="10" upsid="14" ordinal="1" sl="14" sc="1" el="14" ec="2" bec="0" bev="0" fileid="2" />
                 <SequencePoint vc="10" upsid="15" ordinal="2" sl="15" sc="1" el="15" ec="2" bec="0" bev="0" fileid="2" />
-                <SequencePoint vc="9" upsid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
+                <SequencePoint vc="10" upsid="16" ordinal="3" sl="16" sc="1" el="16" ec="2" bec="0" bev="0" fileid="2" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="4" upsid="0" p8:type="SequencePoint" ordinal="2" offset="2" sc="0" sl="13" ec="1" el="16" bec="0" bev="0" fileid="2" xmlns:p8="xsi" />
@@ -207,7 +207,7 @@
                 <SequencePoint vc="3" upsid="23" ordinal="0" sl="23" sc="1" el="23" ec="2" bec="0" bev="0" fileid="4" />
                 <SequencePoint vc="3" upsid="24" ordinal="1" sl="24" sc="1" el="24" ec="2" bec="0" bev="0" fileid="4" />
                 <SequencePoint vc="3" upsid="25" ordinal="2" sl="25" sc="1" el="25" ec="2" bec="0" bev="0" fileid="4" />
-                <SequencePoint vc="2" upsid="26" ordinal="3" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
+                <SequencePoint vc="3" upsid="26" ordinal="3" sl="26" sc="1" el="26" ec="2" bec="0" bev="0" fileid="4" />
               </SequencePoints>
               <BranchPoints />
               <MethodPoint vc="4" upsid="0" p8:type="SequencePoint" ordinal="0" offset="0" sc="0" sl="23" ec="1" el="26" bec="0" bev="0" fileid="4" xmlns:p8="xsi" />
@@ -479,9 +479,9 @@
         </Class>
       </Classes>
     </Module>
-    <Module hash="8BD37E46-E350-42B3-857D-EFBB20463B75">
+    <Module hash="77279792-B353-4CD2-8680-BE74EF841ED8">
       <ModulePath>TemplateTester.Views.dll</ModulePath>
-      <ModuleTime>2018-11-18T07:33:49</ModuleTime>
+      <ModuleTime>2018-11-18T08:32:23</ModuleTime>
       <ModuleName>TemplateTester.Views</ModuleName>
       <Files />
       <Classes />
