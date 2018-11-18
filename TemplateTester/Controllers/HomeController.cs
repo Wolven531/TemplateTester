@@ -68,37 +68,20 @@ namespace TemplateTester.Controllers
 		}
 
 		[HttpGet("health")]
-		public HttpContent GetAPIHealth([FromQuery] string format = "text")
+		public HttpContent GetAPIHealth([FromQuery] string format = null)
 		{
 			const string responseText = "Boom baby!";
 
-			if (string.IsNullOrEmpty(format) || format.Equals("text", StringComparison.InvariantCultureIgnoreCase))
+			if (format == string.Empty || "text".Equals(format, StringComparison.InvariantCultureIgnoreCase))
 			{
 				return new TextContent(responseText);
-				//return Ok(responseText);
 			}
-			if (format.Equals("html", StringComparison.InvariantCultureIgnoreCase))
+			if ("html".Equals(format, StringComparison.InvariantCultureIgnoreCase))
 			{
-				//var respContent = new HtmlContent($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
-				//var resp = new HttpWebResponse() {
-				//	ContentType = respContent.Headers.ContentType.MediaType
-				//};
-
-				////resp.StatusCode = HttpStatusCode.OK;
-				//resp.GetResponseStream().WriteAsync(Encoding.UTF8.GetBytes(respContent.ReadAsStringAsync().Result));
-
-				//return (IActionResult) resp;
 				return new HtmlContent($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
 			}
 
-			//Response.StatusCode = (int)HttpStatusCode.BadRequest;
-			//Response.ContentType = JsonContent.JSONContentType.MediaType;
-			//Response.Body.WriteAsync(Encoding.UTF8.GetBytes(new JObject
-			//{
-			//	["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]"
-			//}.ToString(Formatting.None)));
-
-			//return (IActionResult) Response;
+			Response.StatusCode = (int)HttpStatusCode.BadRequest;
 			return new JsonContent(new JObject
 			{
 				["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]"
