@@ -55,22 +55,22 @@ namespace TemplateTesterTests.Integration
 			response.Content.Should().BeEquivalentTo(expectedResponse);
 		}
 
-		[Fact]
-		public async Task GetAPIHealthEndpoint_WhenInvokedWithValidHtmlFormatParameter_ShouldReturnOkWithHtmlContent()
-		{
-			// Arrange
-			var expectedResponse = new HtmlContent("<html><head><title>Template Tester API Health Check</title></head><body>Boom, baby!</body></html>");
-			var client = _Server.CreateClient();
+		//[Fact]
+		//public async Task GetAPIHealthEndpoint_WhenInvokedWithValidHtmlFormatParameter_ShouldReturnOkWithHtmlContent()
+		//{
+		//	// Arrange
+		//	var expectedResponse = new HtmlContent("<html><head><title>Template Tester API Health Check</title></head><body>Boom, baby!</body></html>");
+		//	var client = _Server.CreateClient();
 
-			// Act
-			var response = await client.GetAsync("/api/health?format=html");
-			response.EnsureSuccessStatusCode();
+		//	// Act
+		//	var response = await client.GetAsync("/api/health?format=html");
+		//	response.EnsureSuccessStatusCode();
 
-			// Assert
-			response.Content.Headers.ContentType.Should().Be(HtmlContent.HtmlContentType);
-			response.StatusCode.Should().Be(HttpStatusCode.OK);
-			response.Content.Should().BeEquivalentTo(expectedResponse);
-		}
+		//	// Assert
+		//	response.Content.Headers.ContentType.Should().Be(HtmlContent.HtmlContentType);
+		//	response.StatusCode.Should().Be(HttpStatusCode.OK);
+		//	response.Content.Should().BeEquivalentTo(expectedResponse);
+		//}
 
 		[Theory]
 		[InlineData("/api/health")]

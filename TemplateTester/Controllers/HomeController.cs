@@ -68,24 +68,34 @@ namespace TemplateTester.Controllers
 		}
 
 		[HttpGet("health")]
-		public HttpContent GetAPIHealth([FromQuery] string format = null)
+		public IActionResult GetAPIHealth([FromQuery] string format = null)
 		{
 			const string responseText = "Boom baby!";
+			ObjectResult resp;
 
 			if (format == string.Empty || "text".Equals(format, StringComparison.InvariantCultureIgnoreCase))
 			{
-				return new TextContent(responseText);
+				resp = Ok(responseText);
+				resp.ContentTypes.Clear();
+				resp.ContentTypes.Add(TextContent.TextContentType.MediaType);
+				return resp;
 			}
-			if ("html".Equals(format, StringComparison.InvariantCultureIgnoreCase))
-			{
-				return new HtmlContent($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
-			}
+			//if ("html".Equals(format, StringComparison.InvariantCultureIgnoreCase))
+			//{
+			//	resp = Ok($"<html><head><title>Template Tester API Health Check</title></head><body>{responseText}</body></html>");
+			//	resp.ContentTypes.Clear();
+			//	resp.ContentTypes.Add(HtmlContent.HtmlContentType.MediaType);
+			//	resp.StatusCode = (int)HttpStatusCode.OK;
+			//	return resp;
+			//}
 
-			Response.StatusCode = (int)HttpStatusCode.BadRequest;
-			return new JsonContent(new JObject
+			resp = BadRequest(new JObject
 			{
 				["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]"
 			});
+			resp.ContentTypes.Clear();
+			resp.ContentTypes.Add(JsonContent.JSONContentType.MediaType);
+			return resp;
 		}
 
 		/// <summary>
