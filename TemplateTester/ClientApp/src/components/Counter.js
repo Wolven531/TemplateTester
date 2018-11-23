@@ -11,6 +11,10 @@ class Counter extends React.Component {
 		}
 	}
 
+	componentDidMount() {
+		window.document.title = 'Web UI | Counter'
+	}
+
 	render() {
 		return <div>
 			<h1>Counter</h1>

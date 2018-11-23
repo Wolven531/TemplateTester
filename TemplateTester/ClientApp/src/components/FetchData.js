@@ -5,6 +5,10 @@ import { Link } from 'react-router-dom'
 import { actionCreators } from '../store/WeatherForecasts'
 
 class FetchData extends Component {
+	componentDidMount() {
+		window.document.title = 'Web UI | Data Fetcher'
+	}
+
 	componentWillMount() {
 		// This method runs when the component is first added to the page
 		const startDateIndex = parseInt(this.props.match.params.startDateIndex, 10) || 0
