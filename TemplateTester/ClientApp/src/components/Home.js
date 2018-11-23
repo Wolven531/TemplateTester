@@ -1,26 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import EntityViewer from './EntityViewer'
 
 class Home extends React.Component {
-	entities = [
-		{ asdf: 'qwer', someNum: -5.43 }
-	]
-
-	constructor(props) {
-		super(props)
+	componentDidMount() {
+		window.document.title = 'Web UI | Homepage'
 	}
 
 	render() {
 		return (
 			<div>
-				<h1>Hello, world!</h1>
-				<div>
-					<h2>Entity Store</h2>
-					{this.entities.length === 0 && <p>No entities stored</p>}
-					<ul>
-						{this.entities.map((entity, ind) => <li key={`entity-${ind}`}>{JSON.stringify(entity, null, 4)}</li>)}
-					</ul>
-				</div>
+				<h1>Web UI Homepage</h1>
+				<EntityViewer />
 			</div>
 		)
 	}
