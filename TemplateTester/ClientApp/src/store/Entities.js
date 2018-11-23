@@ -1,4 +1,5 @@
-﻿const GET_ALL_ENTITIES = 'get_all_entities'
+﻿const ADD_ENTITY = 'add_entity'
+const GET_ALL_ENTITIES = 'get_all_entities'
 
 const initialState = {
 	entities: [
@@ -9,6 +10,10 @@ const initialState = {
 }
 
 const actionCreators = {
+	addEntity: (newEntity) => ({
+		type: ADD_ENTITY,
+		payload: { newEntity }
+	}),
 	getAllEntities: () => ({ type: GET_ALL_ENTITIES })
 }
 
@@ -19,8 +24,11 @@ const reducer = (state, action) => {
 	const { entities } = state
 
 	switch (type) {
-		case GET_ALL_ENTITIES:
+		case ADD_ENTITY:
+			entities.splice(entities.length, 0, payload.newEntity)
 			return { ...state, entities }
+		case GET_ALL_ENTITIES:
+			return { ...state }
 		default:
 			break;
 	}
