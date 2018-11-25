@@ -21,10 +21,7 @@ const reducer = (state, action) => {
 	state = state || initialState
 
 	const { payload, type } = action
-	//const { entities } = state
-
-	console.info(`[reducer | entities] type=${type}`)
-	// console.info(`[reducer | entities] state=${JSON.stringify(state, null, 4)}`)
+	// console.info(`[reducer | entities] type=${type}`)
 
 	switch (type) {
 		case ADD_ENTITY:
@@ -32,7 +29,6 @@ const reducer = (state, action) => {
 			entities.push(payload.newEntity)
 			return { ...state, entities }
 		case GET_ALL_ENTITIES:
-			// TODO: is this necessary?
 			return { ...state, entities }
 		default:
 			break;
