@@ -17,6 +17,7 @@ class EntityAdder extends React.Component {
 				<h2>Entity Adder</h2>
 				<div>
 					<label htmlFor="newEntityText">New Entity</label>
+					<br/>
 					<textarea
 						id="newEntityText"
 						name="newEntityText"
@@ -30,6 +31,7 @@ class EntityAdder extends React.Component {
 
 	handleAddEntityClick = (clickEvent) => {
 		this.props.addEntity({ userInput: this.state.newEntityText })
+		this.setState({ newEntityText: '' })
 	}
 
 	handleNewEntityTextChange = (changeEvent) => {
