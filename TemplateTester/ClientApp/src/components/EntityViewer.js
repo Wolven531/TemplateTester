@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-// import { bindActionCreators, dispatch } from 'redux'
+import { bindActionCreators } from 'redux'
 
 import { actionCreators } from '../store/Entities'
 
-const EntityViewer = ({ entitiesReducer }) => {
+const statelessEntityViewer = ({ entitiesReducer }) => {
 	const { entities } = entitiesReducer
 
 	return <div>
@@ -19,28 +19,9 @@ const EntityViewer = ({ entitiesReducer }) => {
 	</div>
 }
 
-const mapStateToProps = state => {
-	console.info(`[ mapStateToProps | EntityViewer ]`)
-	// NOTE: pull entities reducer state out of overall state tree
-	const { entities } = state
+const EntityViewer = connect(
+	state => ({ entitiesReducer: state.entities }),
+	dispatch => bindActionCreators(actionCreators, dispatch)
+)(statelessEntityViewer)
 
-	return { entitiesReducer: entities }
-}
-
-const mapDispatchToProps = dispatch => {
-	console.info(`[ mapDispatchToProps | EntityViewer ]`)
-	return {
-		addEntity: (newEntity) => {
-			dispatch(actionCreators.addEntity(newEntity))
-		},
-		getAllEntities: () => {
-			dispatch(actionCreators.getAllEntities())
-		}
-	}
-}
-
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-	// dispatch => bindActionCreators(actionCreators, dispatch)
-)(EntityViewer)
+export { EntityViewer }
