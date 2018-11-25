@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import EntityAdder from './EntityAdder'
-import EntityViewer from './EntityViewer'
+import { EntityAdder } from './EntityAdder'
+import { EntityViewer } from './EntityViewer'
 
 class Home extends React.Component {
 	componentDidMount() {
