@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { actionCreators } from '../store/Entities'
 
-class EntityAdder extends React.Component {
+class SimpleEntityAdder extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -48,7 +48,9 @@ class EntityAdder extends React.Component {
 	}
 }
 
-export default connect(
+const EntityAdder = connect(
 	state => state.entities,
 	dispatch => bindActionCreators(actionCreators, dispatch)
-)(EntityAdder)
+)(SimpleEntityAdder)
+
+export { EntityAdder }
