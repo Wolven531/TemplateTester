@@ -1,4 +1,5 @@
 ﻿const ADD_ENTITY = 'add_entity'
+const CLEAR_ALL_ENTITIES = 'clear_all_entities'
 const GET_ALL_ENTITIES = 'get_all_entities'
 
 const entities = [
@@ -14,6 +15,7 @@ const actionCreators = {
 		type: ADD_ENTITY,
 		payload: { newEntity }
 	}),
+	clearAllEntities: () => ({ type: CLEAR_ALL_ENTITIES }),
 	getAllEntities: () => ({ type: GET_ALL_ENTITIES })
 }
 
@@ -27,6 +29,9 @@ const reducer = (state, action) => {
 		case ADD_ENTITY:
 			//entities.splice(entities.length, 0, payload.newEntity)
 			entities.push(payload.newEntity)
+			return { ...state, entities }
+		case CLEAR_ALL_ENTITIES:
+			entities.splice(0, entities.length)
 			return { ...state, entities }
 		case GET_ALL_ENTITIES:
 			return { ...state, entities }
