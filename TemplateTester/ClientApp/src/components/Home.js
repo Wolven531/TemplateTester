@@ -1,8 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import { EntityAdder } from './EntityAdder'
-import { EntityViewer } from './EntityViewer'
+import { EntityManager } from './EntityManager'
 
 class Home extends React.Component {
 	componentDidMount() {
@@ -13,11 +12,10 @@ class Home extends React.Component {
 		return (
 			<div>
 				<h1>Web UI Homepage</h1>
-				<EntityAdder />
-				<EntityViewer />
+				<EntityManager />
 			</div>
 		)
 	}
 }
 
-export default connect(state => state.entities)(Home)
+export default connect()(Home)
