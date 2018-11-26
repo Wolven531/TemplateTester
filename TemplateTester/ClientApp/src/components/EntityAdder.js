@@ -14,7 +14,7 @@ class SimpleEntityAdder extends React.Component {
 	render() {
 		return (
 			<div>
-				<h2>Entity Adder</h2>
+				<h3>Entity Adder</h3>
 				<div>
 					<label htmlFor="newEntityText">New Entity</label>
 					<br/>

@@ -8,7 +8,7 @@ const statelessEntityViewer = ({ entitiesReducer }) => {
 	const { entities } = entitiesReducer
 
 	return <div>
-		<h2>Entity Viewer</h2>
+		<h3>Entity Viewer</h3>
 		{entities.length === 0
 			? <p>No entities stored</p>
 			: <ul>{entities.map((entity, ind) =>
