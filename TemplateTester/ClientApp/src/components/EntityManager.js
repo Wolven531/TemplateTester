@@ -13,15 +13,18 @@ class SimpleEntityManager extends React.Component {
 				<h2>Entity Manager</h2>
 				<EntityAdder />
 				<EntityViewer />
-				<button
-					onClick={this.handleClearEntitiesClick}>Clear Entities</button>
+				<button onClick={this.handleClearEntitiesClick}>Clear Entities</button>
+				<button onClick={this.handleSaveEntitiesClick}>Save Entities (Local Storage)</button>
+				<button onClick={this.handleLoadEntitiesClick}>Load Entities (Local Storage)</button>
 			</div>
 		)
 	}
 
-	handleClearEntitiesClick = (evt) => {
-		this.props.clearAllEntities()
-	}
+	handleClearEntitiesClick = (evt) => this.props.clearAllEntities()
+
+	handleLoadEntitiesClick = (evt) => this.props.loadEntitiesLocalStorage()
+
+	handleSaveEntitiesClick = (evt) => this.props.saveEntitiesLocalStorage()
 }
 
 const EntityManager = connect(
