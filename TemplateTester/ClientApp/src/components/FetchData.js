@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
+import * as React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { actionCreators } from '../store/WeatherForecasts'
 
-class FetchData extends Component {
+class FetchData extends React.Component {
 	componentDidMount() {
-		window.document.title = 'Web UI | Data Fetcher'
+		window.document.title = 'Data Fetcher | Web UI'
 	}
 
 	componentWillMount() {

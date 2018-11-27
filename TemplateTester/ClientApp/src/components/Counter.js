@@ -1,6 +1,7 @@
-import React from 'react'
+import * as React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+
 import { actionCreators } from '../store/Counter'
 
 class Counter extends React.Component {
@@ -12,7 +13,7 @@ class Counter extends React.Component {
 	}
 
 	componentDidMount() {
-		window.document.title = 'Web UI | Counter'
+		window.document.title = 'Counter | Web UI'
 	}
 
 	render() {

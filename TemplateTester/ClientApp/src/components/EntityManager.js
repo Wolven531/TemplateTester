@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 
 import { EntityAdder } from './EntityAdder'
@@ -7,6 +7,10 @@ import { bindActionCreators } from 'redux'
 import { actionCreators } from '../store/Entities'
 
 class SimpleEntityManager extends React.Component {
+	componentDidMount() {
+		window.document.title = 'Entity Manager | Web UI'
+	}
+
 	render() {
 		return (
 			<div>

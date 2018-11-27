@@ -1,21 +1,20 @@
-import React from 'react'
+import * as React from 'react'
 import { connect } from 'react-redux'
 
-import { EntityManager } from './EntityManager'
-
-class Home extends React.Component {
+class SimpleHome extends React.Component {
 	componentDidMount() {
-		window.document.title = 'Web UI | Homepage'
+		window.document.title = 'Homepage | Web UI'
 	}
 
 	render() {
 		return (
 			<div>
 				<h1>Web UI Homepage</h1>
-				<EntityManager />
 			</div>
 		)
 	}
 }
 
-export default connect()(Home)
+const Home = connect()(SimpleHome)
+
+export { Home }
