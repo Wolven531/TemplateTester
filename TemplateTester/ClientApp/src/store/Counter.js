@@ -27,7 +27,7 @@ const reducer = (state, action) => {
 		case incrementCountType:
 			return { ...state, count: count + 1 }
 		default:
-			break;
+			break
 	}
 
 	return state

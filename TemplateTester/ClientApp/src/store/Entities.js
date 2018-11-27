@@ -48,14 +48,15 @@ const reducer = (state, action) => {
 			entities.splice(0, entities.length)
 			return { ...state, entities }
 		case GET_ALL_ENTITIES:
-			break;
+			break
 		case LOAD_ENTITIES_LOCAL:
 			entities.splice(0, entities.length, ...loadFromLocalStorage())
 			return { ...state, entities }
 		case SAVE_ENTITIES_LOCAL:
 			localStorage.setItem(LOCAL_STORAGE_KEY_ENTITIES, JSON.stringify(entities))
+			break
 		default:
-			break;
+			break
 	}
 
 	return state
