@@ -1,5 +1,7 @@
-﻿const ADD_WORKER = 'add_worker'
+﻿const BUY_WORKER = 'buy_worker'
 const GENERATE_RESOURCE = 'generate_resource'
+
+const COST_WORKER = 10
 
 const initialState = {
 	numResource: 0,
@@ -7,7 +9,7 @@ const initialState = {
 }
 
 const actionCreators = {
-	addWorker: () => ({ type: ADD_WORKER }),
+	buyWorker: () => ({ type: BUY_WORKER }),
 	generateResource: () => ({ type: GENERATE_RESOURCE })
 }
 
@@ -15,11 +17,18 @@ const reducer = (state, action) => {
 	state = state || initialState
 
 	const { payload, type } = action
-	const { numResource, numWorkers } = state
+	let { numResource, numWorkers } = state
 
 	switch (type) {
-		case ADD_WORKER:
-			return { ...state, numWorkers: numWorkers + 1 }
+		case BUY_WORKER:
+			numResource -= COST_WORKER
+			numWorkers++
+
+			return {
+				...state,
+				numResource,
+				numWorkers
+			}
 		case GENERATE_RESOURCE:
 			return { ...state, numResource: numResource + 1 }
 		default:
@@ -30,6 +39,7 @@ const reducer = (state, action) => {
 }
 
 export {
+	COST_WORKER,
 	actionCreators,
 	reducer
 }
