@@ -4,12 +4,31 @@ import { bindActionCreators } from 'redux'
 
 import {
 	COST_WORKER,
+	INCOME_FREQUENCY_MILLISECONDS,
 	actionCreators
 } from '../store/Idler'
 
 class SimpleIdler extends React.Component {
+	constructor(props) {
+		super(props)
+		this.state = {
+			incomeTimer: null
+		}
+	}
+
 	componentDidMount() {
 		window.document.title = 'Idler | Web UI'
+
+		const incomeTimer = setInterval(
+			this.props.collectIncome,
+			INCOME_FREQUENCY_MILLISECONDS)
+		this.setState({ incomeTimer })
+	}
+
+	componentWillUnmount() {
+		if (this.state.incomeTimer) {
+			clearInterval(this.state.incomeTimer)
+		}
 	}
 
 	render() {
