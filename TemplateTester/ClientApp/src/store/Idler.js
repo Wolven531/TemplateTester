@@ -8,7 +8,7 @@ const COST_WORKER = 10
 
 const INCOME_FREQUENCY_MILLISECONDS = 1000
 
-const INCOME_WORKER = 1
+const PRODUCTION_WORKER = 1
 
 const initialState = {
 	// incomeTimer: null,
@@ -45,7 +45,7 @@ const reducer = (state, action) => {
 				numWorkers
 			}
 		case COLLECT_INCOME:
-			numResource += numWorkers * INCOME_WORKER
+			numResource += numWorkers * PRODUCTION_WORKER
 
 			return { ...state, numResource }
 		case GENERATE_RESOURCE:
@@ -72,6 +72,7 @@ const reducer = (state, action) => {
 export {
 	COST_WORKER,
 	INCOME_FREQUENCY_MILLISECONDS,
+	PRODUCTION_WORKER,
 	actionCreators,
 	reducer
 }

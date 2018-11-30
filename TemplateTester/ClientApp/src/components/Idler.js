@@ -2,9 +2,12 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import { BuyWorkerButton } from './BuyWorkerButton'
+
 import {
 	COST_WORKER,
 	INCOME_FREQUENCY_MILLISECONDS,
+	PRODUCTION_WORKER,
 	actionCreators
 } from '../store/Idler'
 
@@ -45,18 +48,15 @@ class SimpleIdler extends React.Component {
 					<button onClick={this.props.generateResource}>Generate Resource (+1)</button>
 				</section>
 				<section>
-					<button disabled={this.props.numResource < COST_WORKER}
-						onClick={this.handleBuyWorkerClick}>Buy Worker (Cost={COST_WORKER})</button>
+					<BuyWorkerButton
+						buyWorker={this.props.buyWorker}
+						cost={COST_WORKER}
+						disabled={this.props.numResource < COST_WORKER}
+						production={PRODUCTION_WORKER}
+						/>
 				</section>
 			</article>
 		)
-	}
-
-	handleBuyWorkerClick = (evt) => {
-		if (this.props.numResource < COST_WORKER) {
-			return
-		}
-		this.props.buyWorker()
 	}
 }
 
