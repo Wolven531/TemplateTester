@@ -1,0 +1,26 @@
+﻿.generate-resource-button {
+	margin: 1em 0;
+	padding: .5em;
+}
+
+.negative-number,
+.positive-number {
+	border: 1px solid #000;
+	border-radius: 10px;
+	margin: 0 .25em;
+	padding: .5em 1em;
+}
+
+.negative-number {
+	background-color: rgba(255, 255, 0, .67);
+	color: #f00;
+}
+
+.positive-number {
+	background-color: rgba(0, 255, 0, .67);
+	color: #060;
+}
+
+progress {
+	margin: 1.25em 0 0 0;
+}
