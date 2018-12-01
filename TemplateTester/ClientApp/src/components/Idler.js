@@ -15,22 +15,21 @@ class SimpleIdler extends React.Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			incomeTimer: null
+			progressTick: 0,
+			progressTimer: null
 		}
 	}
 
 	componentDidMount() {
 		window.document.title = 'Idler | Web UI'
 
-		const incomeTimer = setInterval(
-			this.props.collectIncome,
-			INCOME_FREQUENCY_MILLISECONDS)
-		this.setState({ incomeTimer })
+		const progressTimer = setInterval(this.onProgressTimerElapsed, INCOME_FREQUENCY_MILLISECONDS / 100)
+		this.setState({ progressTimer })
 	}
 
 	componentWillUnmount() {
-		if (this.state.incomeTimer) {
-			clearInterval(this.state.incomeTimer)
+		if (this.state.progressTimer) {
+			clearInterval(this.state.progressTimer)
 		}
 	}
 
@@ -40,6 +39,8 @@ class SimpleIdler extends React.Component {
 				<h1>Idler</h1>
 				<section>
 					<h2>Resources: {this.props.numResource}</h2>
+					{this.props.numWorkers > 0 &&
+						<progress value={this.state.progressTick} max={100} />}
 				</section>
 				<section>
 					<h2>Workers: {this.props.numWorkers}</h2>
@@ -57,6 +58,18 @@ class SimpleIdler extends React.Component {
 				</section>
 			</article>
 		)
+	}
+
+	onProgressTimerElapsed = () => {
+		const { progressTick } = this.state
+
+		if (progressTick < 100) {
+			this.setState({ progressTick: progressTick + 1 })
+			return
+		}
+
+		this.props.collectIncome()
+		this.setState({ progressTick: 0 })
 	}
 }
 
