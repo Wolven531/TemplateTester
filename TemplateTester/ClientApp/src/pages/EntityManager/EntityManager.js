@@ -1,10 +1,11 @@
 import * as React from 'react'
 import { connect } from 'react-redux'
-
-import { EntityAdder } from './EntityAdder'
-import { EntityViewer } from './EntityViewer'
 import { bindActionCreators } from 'redux'
-import { actionCreators } from '../store/Entities'
+
+import { EntityAdder } from '../../components/EntityAdder'
+import { EntityViewer } from '../../components/EntityViewer'
+
+import { actionCreators } from '../../store/Entities'
 
 class SimpleEntityManager extends React.Component {
 	componentDidMount() {

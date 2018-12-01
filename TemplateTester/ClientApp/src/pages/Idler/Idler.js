@@ -2,14 +2,14 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { BuyWorkerButton } from './BuyWorkerButton'
+import { BuyWorkerButton } from '../../components/BuyWorkerButton'
 
 import {
 	COST_WORKER,
 	INCOME_FREQUENCY_MILLISECONDS,
 	PRODUCTION_WORKER,
 	actionCreators
-} from '../store/Idler'
+} from '../../store/Idler'
 
 import './Idler.css'
 
@@ -44,12 +44,14 @@ class SimpleIdler extends React.Component {
 					{this.props.numWorkers > 0 &&
 						<article>
 							<label htmlFor="incomeProgress">Payday <em className="positive-number">+ {this.calculateProjectedPayday()}</em>:</label>
-							<br />
 							<progress id="incomeProgress" value={this.state.progressTick} max={100} />
 						</article>}
 				</section>
 				<section>
 					<h2>Workers: {this.props.numWorkers}</h2>
+				</section>
+				<section>
+					<h2>Upgrades:</h2>
 				</section>
 				<section>
 					<button className="generate-resource-button" onClick={this.props.generateResource}>Generate Resource <em className="positive-number">Prod=1</em></button>

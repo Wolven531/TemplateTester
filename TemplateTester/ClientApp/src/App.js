@@ -1,12 +1,13 @@
 ﻿import * as React from'react'
 import { Route } from 'react-router'
 
-import Counter from './components/Counter'
-import { EntityManager } from './components/EntityManager'
-import FetchData from './components/FetchData'
-import { Home } from './components/Home'
-import { Idler } from './components/Idler'
 import Layout from './components/Layout'
+
+import Counter from './pages/Counter/Counter'
+import { EntityManager } from './pages/EntityManager/EntityManager'
+import FetchData from './pages/DataFetcher/FetchData'
+import { Home } from './pages/Home/Home'
+import { Idler } from './pages/Idler/Idler'
 
 export default () => (
 	<Layout>
