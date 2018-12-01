@@ -2,15 +2,12 @@ import * as React from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
-import { BuyWorkerButton } from '../../components/BuyWorkerButton/BuyWorkerButton'
 import { ResourceDisplay } from '../../components/ResourceDisplay'
 import { UpgradesDisplay } from '../../components/UpgradesDisplay'
 import { WorkerDisplay } from '../../components/WorkerDisplay'
 
 import {
-	COST_WORKER,
 	INCOME_FREQUENCY_MILLISECONDS,
-	PRODUCTION_WORKER,
 	actionCreators
 } from '../../store/Idler'
 
@@ -47,16 +44,11 @@ class SimpleIdler extends React.Component {
 					numResource={this.props.numResource}
 					numWorkers={this.props.numWorkers}
 					percentToNextPayday={this.state.progressTick} />
-				<WorkerDisplay numWorkers={this.props.numWorkers} />
+				<WorkerDisplay
+					buyWorker={this.props.buyWorker}
+					numResource={this.props.numResource}
+					numWorkers={this.props.numWorkers} />
 				<UpgradesDisplay numResource={this.props.numResource} />
-				<section>
-					<BuyWorkerButton
-						buyWorker={this.props.buyWorker}
-						cost={COST_WORKER}
-						disabled={this.props.numResource < COST_WORKER}
-						production={PRODUCTION_WORKER}
-						/>
-				</section>
 			</article>
 		)
 	}
