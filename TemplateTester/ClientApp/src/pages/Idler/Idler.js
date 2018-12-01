@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 
 import { BuyWorkerButton } from '../../components/BuyWorkerButton/BuyWorkerButton'
 import { ResourceDisplay } from '../../components/ResourceDisplay'
+import { UpgradesDisplay } from '../../components/UpgradesDisplay'
 import { WorkerDisplay } from '../../components/WorkerDisplay'
 
 import {
@@ -42,16 +43,12 @@ class SimpleIdler extends React.Component {
 			<article>
 				<h1>Idler</h1>
 				<ResourceDisplay
+					generateResource={this.props.generateResource}
 					numResource={this.props.numResource}
 					numWorkers={this.props.numWorkers}
 					percentToNextPayday={this.state.progressTick} />
 				<WorkerDisplay numWorkers={this.props.numWorkers} />
-				<section>
-					<h2>Upgrades:</h2>
-				</section>
-				<section>
-					<button className="generate-resource-button" onClick={this.props.generateResource}>Generate Resource <em className="positive-number">Prod=1</em></button>
-				</section>
+				<UpgradesDisplay numResource={this.props.numResource} />
 				<section>
 					<BuyWorkerButton
 						buyWorker={this.props.buyWorker}
