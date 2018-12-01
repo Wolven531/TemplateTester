@@ -11,6 +11,8 @@ import {
 	actionCreators
 } from '../store/Idler'
 
+import './Idler.css'
+
 class SimpleIdler extends React.Component {
 	constructor(props) {
 		super(props)
@@ -40,13 +42,17 @@ class SimpleIdler extends React.Component {
 				<section>
 					<h2>Resources: {this.props.numResource}</h2>
 					{this.props.numWorkers > 0 &&
-						<progress value={this.state.progressTick} max={100} />}
+						<article>
+							<label htmlFor="incomeProgress">Payday <em className="positive-number">+ {this.calculateProjectedPayday()}</em>:</label>
+							<br />
+							<progress id="incomeProgress" value={this.state.progressTick} max={100} />
+						</article>}
 				</section>
 				<section>
 					<h2>Workers: {this.props.numWorkers}</h2>
 				</section>
 				<section>
-					<button onClick={this.props.generateResource}>Generate Resource (+1)</button>
+					<button className="generate-resource-button" onClick={this.props.generateResource}>Generate Resource <em className="positive-number">Prod=1</em></button>
 				</section>
 				<section>
 					<BuyWorkerButton
@@ -59,6 +65,8 @@ class SimpleIdler extends React.Component {
 			</article>
 		)
 	}
+
+	calculateProjectedPayday = () => this.props.numWorkers * PRODUCTION_WORKER
 
 	onProgressTimerElapsed = () => {
 		const { progressTick } = this.state
