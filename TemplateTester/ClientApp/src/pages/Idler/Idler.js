@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { BuyWorkerButton } from '../../components/BuyWorkerButton/BuyWorkerButton'
+import { ResourceDisplay } from '../../components/ResourceDisplay'
+import { WorkerDisplay } from '../../components/WorkerDisplay'
 
 import {
 	COST_WORKER,
@@ -39,17 +41,11 @@ class SimpleIdler extends React.Component {
 		return (
 			<article>
 				<h1>Idler</h1>
-				<section>
-					<h2>Resources: {this.props.numResource}</h2>
-					{this.props.numWorkers > 0 &&
-						<article>
-							<label htmlFor="incomeProgress">Payday <em className="positive-number">+ {this.calculateProjectedPayday()}</em>:</label>
-							<progress id="incomeProgress" value={this.state.progressTick} max={100} />
-						</article>}
-				</section>
-				<section>
-					<h2>Workers: {this.props.numWorkers}</h2>
-				</section>
+				<ResourceDisplay
+					numResource={this.props.numResource}
+					numWorkers={this.props.numWorkers}
+					percentToNextPayday={this.state.progressTick} />
+				<WorkerDisplay numWorkers={this.props.numWorkers} />
 				<section>
 					<h2>Upgrades:</h2>
 				</section>
@@ -67,8 +63,6 @@ class SimpleIdler extends React.Component {
 			</article>
 		)
 	}
-
-	calculateProjectedPayday = () => this.props.numWorkers * PRODUCTION_WORKER
 
 	onProgressTimerElapsed = () => {
 		const { progressTick } = this.state
