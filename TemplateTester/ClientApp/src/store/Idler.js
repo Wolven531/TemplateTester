@@ -27,7 +27,8 @@ const actionCreators = {
 const reducer = (state, action) => {
 	state = state || initialState
 
-	const { payload, type } = action
+	// const { payload, type } = action
+	const { type } = action
 	let {
 		// incomeTimer,
 		numResource,
