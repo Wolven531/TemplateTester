@@ -4,7 +4,7 @@ const GENERATE_RESOURCE = 'generate_resource'
 // const START_INCOME_TIMER = 'start_income_timer'
 // const STOP_INCOME_TIMER = 'stop_income_timer'
 
-const COST_WORKER = 10
+const STARTING_COST_WORKER = 10
 
 const INCOME_FREQUENCY_MILLISECONDS = 1000
 
@@ -13,7 +13,8 @@ const PRODUCTION_WORKER = 1
 const initialState = {
 	// incomeTimer: null,
 	numResource: 0,
-	numWorkers: 0
+	numWorkers: 0,
+	workerCost: STARTING_COST_WORKER
 }
 
 const actionCreators = {
@@ -32,18 +33,24 @@ const reducer = (state, action) => {
 	let {
 		// incomeTimer,
 		numResource,
-		numWorkers
+		numWorkers,
+		workerCost
 	} = state
 
 	switch (type) {
 		case BUY_WORKER:
-			numResource -= COST_WORKER
+			// NOTE: decrease resources
+			numResource -= workerCost
+			// NOTE: increase number of workers
 			numWorkers++
+			// NOTE: increase worker cost
+			workerCost = parseInt((numWorkers / 5.0) + (1.1 * workerCost), 10)
 
 			return {
 				...state,
 				numResource,
-				numWorkers
+				numWorkers,
+				workerCost
 			}
 		case COLLECT_INCOME:
 			numResource += numWorkers * PRODUCTION_WORKER
@@ -71,7 +78,7 @@ const reducer = (state, action) => {
 }
 
 export {
-	COST_WORKER,
+	STARTING_COST_WORKER as COST_WORKER,
 	INCOME_FREQUENCY_MILLISECONDS,
 	PRODUCTION_WORKER,
 	actionCreators,
