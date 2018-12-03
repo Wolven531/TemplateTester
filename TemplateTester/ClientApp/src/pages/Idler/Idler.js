@@ -47,7 +47,8 @@ class SimpleIdler extends React.Component {
 				<WorkerDisplay
 					buyWorker={this.props.buyWorker}
 					numResource={this.props.numResource}
-					numWorkers={this.props.numWorkers} />
+					numWorkers={this.props.numWorkers}
+					workerCost={this.props.workerCost} />
 				<UpgradesDisplay numResource={this.props.numResource} />
 			</article>
 		)
