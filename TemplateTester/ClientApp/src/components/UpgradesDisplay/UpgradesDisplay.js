@@ -16,6 +16,7 @@ const UpgradesDisplay = ({ numResource }) => (
 					<article className="upgrade-container" key={name.replace(' ', '-')}>
 						<h3>{name}</h3>
 						<p>Price: {cost} resources</p>
+						<progress value={numResource % cost} max={cost} />
 					</article>
 				)
 			}
