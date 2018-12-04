@@ -21,6 +21,6 @@
 	color: #060;
 }
 
-progress {
+.resource-display progress {
 	margin: 0 0 0 1.25em;
 }
