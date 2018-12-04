@@ -8,7 +8,7 @@ const ResourceDisplay = ({
 	numWorkers,
 	percentToNextPayday
 }) => (
-	<section>
+	<section className="resource-display">
 		<h2>Resources: {numResource}</h2>
 		{numWorkers > 0 &&
 			<article>
