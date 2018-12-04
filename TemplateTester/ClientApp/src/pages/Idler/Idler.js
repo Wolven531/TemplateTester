@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import { ResourceDisplay } from '../../components/ResourceDisplay'
-import { UpgradesDisplay } from '../../components/UpgradesDisplay'
+import { UpgradesDisplay } from '../../components/UpgradesDisplay/UpgradesDisplay'
 import { WorkerDisplay } from '../../components/WorkerDisplay'
 
 import {
