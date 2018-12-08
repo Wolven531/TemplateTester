@@ -1,0 +1,51 @@
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.TestHost;
+using Moq;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using TemplateTester;
+using TemplateTester.Repositories;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection.Extensions;
+using Xunit;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
+using TemplateTester.Models;
+using Newtonsoft.Json;
+using FluentAssertions;
+using System.Net;
+
+namespace TemplateTesterTests.Unit.Repositories
+{
+	public class InMemoryEntityRepositoryTests : IDisposable
+	{
+		[Fact]
+		public void GetAllEntities_WhenInvoked_ShouldReturnListOfEntities()
+		{
+			// Arrange
+			var entities = new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			};
+			var fixture = new InMemoryEntityRepository(entities);
+
+			// Act
+			var response = fixture.GetAllEntities();
+
+			// Assert
+			response.Should().BeEquivalentTo(new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			});
+		}
+
+		public void Dispose()
+		{
+		}
+	}
+}
