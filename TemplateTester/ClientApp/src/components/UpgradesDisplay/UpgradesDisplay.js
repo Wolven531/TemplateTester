@@ -4,7 +4,7 @@ import { Upgrades } from '../../models/Upgrades'
 
 import './UpgradesDisplay.css'
 
-const UpgradesDisplay = ({ numResource }) => (
+const UpgradesDisplay = ({ buyUpgrade, numResource }) => (
 	<section className="upgrades-display">
 		<h2>Upgrades:</h2>
 		{Object.getOwnPropertyNames(Upgrades)
@@ -17,7 +17,8 @@ const UpgradesDisplay = ({ numResource }) => (
 					<article className="upgrade-container" key={name.replace(' ', '-')}>
 						<h3>{name}</h3>
 						<p>
-						<span className="cost">{cost} resources ({percentage}%)</span>
+							<span className="cost"
+								onClick={() => buyUpgrade(upgradeKey)}>{cost} resources ({percentage}%)</span>
 							<progress value={percentage} max={100}>
 								{percentage}%
 							</progress>

@@ -1,4 +1,7 @@
-﻿const BUY_WORKER = 'buy_worker'
+﻿import { Upgrades } from '../models/Upgrades'
+
+const BUY_UPGRADE = 'buy_upgrade'
+const BUY_WORKER = 'buy_worker'
 const COLLECT_INCOME = 'collect_income'
 const GENERATE_RESOURCE = 'generate_resource'
 // const START_INCOME_TIMER = 'start_income_timer'
@@ -18,6 +21,13 @@ const initialState = {
 }
 
 const actionCreators = {
+	buyUpgrade: upgradeName => (
+		{
+			type: BUY_UPGRADE,
+			payload: {
+				upgradeName
+			}
+		}),
 	buyWorker: () => ({ type: BUY_WORKER }),
 	collectIncome: () => ({ type: COLLECT_INCOME }),
 	generateResource: () => ({ type: GENERATE_RESOURCE })
@@ -26,10 +36,9 @@ const actionCreators = {
 }
 
 const reducer = (state, action) => {
+	const { payload, type } = action
 	state = state || initialState
 
-	// const { payload, type } = action
-	const { type } = action
 	let {
 		// incomeTimer,
 		numResource,
@@ -38,6 +47,15 @@ const reducer = (state, action) => {
 	} = state
 
 	switch (type) {
+		case BUY_UPGRADE:
+			const { upgradeName } = payload
+			const upgrade = Upgrades[upgradeName]
+
+			console.log(`[ reducer | Idler ] upgrade=${JSON.stringify(upgrade, null, 4)}`)
+
+			return {
+				...state
+			}
 		case BUY_WORKER:
 			// NOTE: decrease resources
 			numResource -= workerCost
