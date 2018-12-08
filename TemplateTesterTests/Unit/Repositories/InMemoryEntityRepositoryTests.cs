@@ -71,7 +71,7 @@ namespace TemplateTesterTests.Unit.Repositories
 		}
 
 		[Fact]
-		public void RemoveEntity_WhenInvoked_ShouldRemoveEntity()
+		public void RemoveEntity_WhenInvokedWithMatchingName_ShouldRemoveEntity()
 		{
 			// Arrange
 			var entities = new[]
@@ -90,6 +90,31 @@ namespace TemplateTesterTests.Unit.Repositories
 			allEntities.Should().BeEquivalentTo(new[]
 			{
 				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 3")
+			});
+		}
+
+		[Fact]
+		public void RemoveEntity_WhenInvokedWithoutMatchingName_ShouldHaveNoEffect()
+		{
+			// Arrange
+			var entities = new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			};
+			var fixture = new InMemoryEntityRepository(entities);
+
+			// Act
+			fixture.RemoveEntity("ent 5");
+			var allEntities = fixture.GetAllEntities();
+
+			// Assert
+			allEntities.Should().BeEquivalentTo(new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
 				new SimpleEntity("ent 3")
 			});
 		}
