@@ -11,5 +11,7 @@ namespace TemplateTester.Repositories
 		IEnumerable<SimpleEntity> GetAllEntities();
 
 		void AddEntity(SimpleEntity newEntity);
+
+		void RemoveEntity(string readableName);
 	}
 }

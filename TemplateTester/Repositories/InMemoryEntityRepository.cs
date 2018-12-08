@@ -24,5 +24,10 @@ namespace TemplateTester.Repositories
 		{
 			return _Entities;
 		}
+
+		public void RemoveEntity(string readableName)
+		{
+			_Entities.RemoveAll(simpleEntity => simpleEntity.ReadableName.Equals(readableName, StringComparison.InvariantCultureIgnoreCase));
+		}
 	}
 }
