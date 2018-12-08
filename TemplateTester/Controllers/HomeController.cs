@@ -163,15 +163,18 @@ namespace TemplateTester.Controllers
 			return Ok();
 		}
 
+		[Route("entities/{readableName}")]
+		[HttpDelete]
+		public IActionResult DeleteUsingReadableName([FromRoute] string readableName)
+		{
+			_EntityRepository.RemoveEntity(readableName);
+
+			return NoContent();
+		}
+
 		//// PUT: api/Home/5
 		//[HttpPut("{id}")]
 		//public void Put(int id, [FromBody] string value)
-		//{
-		//}
-
-		//// DELETE: api/ApiWithActions/5
-		//[HttpDelete("{id}")]
-		//public void Delete(int id)
 		//{
 		//}
 	}

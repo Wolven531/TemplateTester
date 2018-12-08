@@ -92,6 +92,26 @@ namespace TemplateTesterTests.Unit.Controllers
 			entityPassedToRepo.Should().BeEquivalentTo(new SimpleEntity("new 1"));
 		}
 
+		[Fact]
+		public async Task DeleteUsingReadableName_WhenInvoked_ShouldDeleteEntityFromRepository()
+		{
+			// Arrange
+			string namePassedToRepo = null;
+			_MockEntityRepository
+				.Setup(repo => repo.RemoveEntity(It.IsAny<string>()))
+				.Callback<string>(paramReadableName => namePassedToRepo = paramReadableName);
+			var client = _Server.CreateClient();
+
+			// Act
+			var deleteResponse = await client.DeleteAsync("/api/entities/ent1");
+			deleteResponse.EnsureSuccessStatusCode();
+
+			// Assert
+			_MockEntityRepository.VerifyAll();
+			deleteResponse.StatusCode.Should().Be(HttpStatusCode.NoContent);
+			namePassedToRepo.Should().BeEquivalentTo("ent1");
+		}
+
 		public void Dispose()
 		{
 			_Server.Dispose();
