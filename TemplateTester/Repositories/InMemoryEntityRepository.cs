@@ -10,9 +10,11 @@ namespace TemplateTester.Repositories
 	{
 		private readonly List<SimpleEntity> _Entities;
 
-		public InMemoryEntityRepository()
+		public InMemoryEntityRepository(IEnumerable<SimpleEntity> initialStore = null)
 		{
-			_Entities = new List<SimpleEntity>();
+			_Entities = initialStore != null
+				? initialStore.ToList()
+				: new List<SimpleEntity>();
 		}
 
 		public void AddEntity(SimpleEntity newEntity)
