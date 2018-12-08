@@ -61,12 +61,6 @@ namespace TemplateTester.Controllers
 			_EntityRepository = entityRepository;
 		}
 
-		[HttpGet("entities")]
-		public IActionResult GetAllEntities()
-		{
-			return Ok(_EntityRepository.GetAllEntities());
-		}
-
 		[HttpGet("health")]
 		public IActionResult GetAPIHealth([FromQuery] string format = null)
 		{
@@ -152,6 +146,12 @@ namespace TemplateTester.Controllers
 				});
 			}
 			return NoContent();
+		}
+
+		[HttpGet("entities")]
+		public IActionResult GetAllEntities()
+		{
+			return Ok(_EntityRepository.GetAllEntities());
 		}
 
 		[Route("entities")]
