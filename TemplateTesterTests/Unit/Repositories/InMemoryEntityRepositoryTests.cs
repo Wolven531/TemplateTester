@@ -44,6 +44,32 @@ namespace TemplateTesterTests.Unit.Repositories
 			});
 		}
 
+		[Fact]
+		public void AddEntity_WhenInvoked_ShouldAddEntity()
+		{
+			// Arrange
+			var entities = new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			};
+			var fixture = new InMemoryEntityRepository(entities);
+
+			// Act
+			fixture.AddEntity(new SimpleEntity("new 1"));
+			var allEntities = fixture.GetAllEntities();
+
+			// Assert
+			allEntities.Should().BeEquivalentTo(new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3"),
+				new SimpleEntity("new 1")
+			});
+		}
+
 		public void Dispose()
 		{
 		}
