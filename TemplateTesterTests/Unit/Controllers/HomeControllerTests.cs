@@ -72,6 +72,26 @@ namespace TemplateTesterTests.Unit.Controllers
 			getResponseString.Should().BeEquivalentTo(expectedResponseString);
 		}
 
+		[Fact]
+		public async Task PostWithModelParam_WhenInvoked_ShouldAddEntityToRepository()
+		{
+			// Arrange
+			SimpleEntity entityPassedToRepo = null;
+			_MockEntityRepository
+				.Setup(repo => repo.AddEntity(It.IsAny<SimpleEntity>()))
+				.Callback<SimpleEntity>(paramSimpleEntity => entityPassedToRepo = paramSimpleEntity);
+			var client = _Server.CreateClient();
+
+			// Act
+			var postResponse = await client.PostAsync("/api/entities", new JsonContent(JToken.FromObject(new SimpleEntity("new 1"))));
+			postResponse.EnsureSuccessStatusCode();
+
+			// Assert
+			_MockEntityRepository.VerifyAll();
+			postResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+			entityPassedToRepo.Should().BeEquivalentTo(new SimpleEntity("new 1"));
+		}
+
 		public void Dispose()
 		{
 			_Server.Dispose();
