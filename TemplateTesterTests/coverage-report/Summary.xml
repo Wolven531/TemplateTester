@@ -1,26 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>12/08/2018 - 01:42:39 PM</Generatedon>
+    <Generatedon>12/08/2018 - 02:07:56 PM</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>2</Assemblies>
-    <Classes>7</Classes>
-    <Files>7</Files>
-    <Coveredlines>156</Coveredlines>
-    <Uncoveredlines>9</Uncoveredlines>
-    <Coverablelines>165</Coverablelines>
-    <Totallines>397</Totallines>
-    <Linecoverage>94.5%</Linecoverage>
-    <Branchcoverage>90%</Branchcoverage>
+    <Classes>6</Classes>
+    <Files>6</Files>
+    <Coveredlines>161</Coveredlines>
+    <Uncoveredlines>1</Uncoveredlines>
+    <Coverablelines>162</Coverablelines>
+    <Totallines>371</Totallines>
+    <Linecoverage>99.3%</Linecoverage>
+    <Branchcoverage>90.9%</Branchcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="TemplateTester" classes="7" coverage="94.5" coveredlines="156" coverablelines="165" totallines="397" branchcoverage="90" coveredbranches="18" totalbranches="20">
+    <Assembly name="TemplateTester" classes="6" coverage="99.3" coveredlines="161" coverablelines="162" totallines="371" branchcoverage="90.9" coveredbranches="20" totalbranches="22">
       <Class name="TemplateTester.Controllers.HomeController" coverage="100" coveredlines="90" coverablelines="90" totallines="181" branchcoverage="85.7" coveredbranches="12" totalbranches="14" />
-      <Class name="TemplateTester.Models.HtmlContent" coverage="0" coveredlines="0" coverablelines="5" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.JsonContent" coverage="100" coveredlines="5" coverablelines="5" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.SimpleEntity" coverage="100" coveredlines="5" coverablelines="5" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.TextContent" coverage="100" coveredlines="5" coverablelines="5" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
-      <Class name="TemplateTester.Repositories.InMemoryEntityRepository" coverage="76.9" coveredlines="10" coverablelines="13" totallines="33" branchcoverage="" coveredbranches="0" totalbranches="0" />
+      <Class name="TemplateTester.Repositories.InMemoryEntityRepository" coverage="100" coveredlines="15" coverablelines="15" totallines="35" branchcoverage="100" coveredbranches="2" totalbranches="2" />
       <Class name="TemplateTester.Startup" coverage="97.6" coveredlines="41" coverablelines="42" totallines="82" branchcoverage="100" coveredbranches="6" totalbranches="6" />
     </Assembly>
     <Assembly name="TemplateTester.Views" classes="0" coverage="" coveredlines="0" coverablelines="0" totallines="0" branchcoverage="" coveredbranches="0" totalbranches="0" />
