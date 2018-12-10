@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<coverage version="1.0" date="2018-12-09_22-53-34" tag="">
+  <assembly name="TemplateTester">
+    <class name="TemplateTester.Controllers.HomeController" coveredlines="90" coverablelines="90" totallines="181" coveredbranches="12" totalbranches="14" />
+    <class name="TemplateTester.Models.JsonContent" coveredlines="5" coverablelines="5" totallines="28" coveredbranches="0" totalbranches="0" />
+    <class name="TemplateTester.Models.SimpleEntity" coveredlines="5" coverablelines="5" totallines="17" coveredbranches="0" totalbranches="0" />
+    <class name="TemplateTester.Models.TextContent" coveredlines="5" coverablelines="5" totallines="28" coveredbranches="0" totalbranches="0" />
+    <class name="TemplateTester.Repositories.InMemoryEntityRepository" coveredlines="22" coverablelines="24" totallines="47" coveredbranches="3" totalbranches="4" />
+    <class name="TemplateTester.Startup" coveredlines="41" coverablelines="42" totallines="82" coveredbranches="6" totalbranches="6" />
+  </assembly>
+  <assembly name="TemplateTester.Views" />
+</coverage>
