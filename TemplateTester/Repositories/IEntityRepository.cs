@@ -13,5 +13,7 @@ namespace TemplateTester.Repositories
 		void AddEntity(SimpleEntity newEntity);
 
 		void RemoveEntity(string readableName);
+
+		void UpdateEntity(string readableName, SimpleEntity updatedEntity);
 	}
 }

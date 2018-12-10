@@ -31,5 +31,17 @@ namespace TemplateTester.Repositories
 		{
 			_Entities.RemoveAll(simpleEntity => simpleEntity.ReadableName.Equals(readableName, StringComparison.InvariantCultureIgnoreCase));
 		}
+
+		public void UpdateEntity(string readableName, SimpleEntity updatedEntity)
+		{
+			var matchingEntity = _Entities.SingleOrDefault(entity => entity.ReadableName.Equals(readableName, StringComparison.InvariantCultureIgnoreCase));
+			if (matchingEntity == null)
+			{
+				return;
+			}
+			var matchingLocation = _Entities.IndexOf(matchingEntity);
+			_Entities.Remove(matchingEntity);
+			_Entities.Insert(matchingLocation, updatedEntity);
+		}
 	}
 }
