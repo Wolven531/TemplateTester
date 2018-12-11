@@ -144,6 +144,31 @@ namespace TemplateTesterTests.Unit.Repositories
 			});
 		}
 
+		[Fact]
+		public void UpdateEntity_WhenInvokedWithNonMatchingName_ShouldHaveNoEffect()
+		{
+			// Arrange
+			var entities = new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			};
+			var fixture = new InMemoryEntityRepository(entities);
+
+			// Act
+			fixture.UpdateEntity("ent 5", new SimpleEntity("updated 1"));
+			var allEntities = fixture.GetAllEntities();
+
+			// Assert
+			allEntities.Should().BeEquivalentTo(new[]
+			{
+				new SimpleEntity("ent 1"),
+				new SimpleEntity("ent 2"),
+				new SimpleEntity("ent 3")
+			});
+		}
+
 		public void Dispose()
 		{
 		}
