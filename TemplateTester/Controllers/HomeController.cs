@@ -172,10 +172,12 @@ namespace TemplateTester.Controllers
 			return NoContent();
 		}
 
-		//// PUT: api/Home/5
-		//[HttpPut("{id}")]
-		//public void Put(int id, [FromBody] string value)
-		//{
-		//}
+		[HttpPut("entities/{readableName}")]
+		public IActionResult UpdateUsingReadableName([FromRoute] string readableName, [FromBody] SimpleEntity updatedEntity)
+		{
+			_EntityRepository.UpdateEntity(readableName, updatedEntity);
+
+			return NoContent();
+		}
 	}
 }
