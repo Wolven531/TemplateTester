@@ -1,21 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CoverageReport scope="Summary">
   <Summary>
-    <Generatedon>12/10/2018 - 06:20:36 PM</Generatedon>
+    <Generatedon>12/12/2018 - 05:11:19 PM</Generatedon>
     <Parser>OpenCoverParser</Parser>
     <Assemblies>2</Assemblies>
     <Classes>6</Classes>
     <Files>6</Files>
-    <Coveredlines>170</Coveredlines>
+    <Coveredlines>174</Coveredlines>
     <Uncoveredlines>1</Uncoveredlines>
-    <Coverablelines>171</Coverablelines>
-    <Totallines>383</Totallines>
+    <Coverablelines>175</Coverablelines>
+    <Totallines>385</Totallines>
     <Linecoverage>99.4%</Linecoverage>
     <Branchcoverage>91.6%</Branchcoverage>
   </Summary>
   <Coverage>
-    <Assembly name="TemplateTester" classes="6" coverage="99.4" coveredlines="170" coverablelines="171" totallines="383" branchcoverage="91.6" coveredbranches="22" totalbranches="24">
-      <Class name="TemplateTester.Controllers.HomeController" coverage="100" coveredlines="90" coverablelines="90" totallines="181" branchcoverage="85.7" coveredbranches="12" totalbranches="14" />
+    <Assembly name="TemplateTester" classes="6" coverage="99.4" coveredlines="174" coverablelines="175" totallines="385" branchcoverage="91.6" coveredbranches="22" totalbranches="24">
+      <Class name="TemplateTester.Controllers.HomeController" coverage="100" coveredlines="94" coverablelines="94" totallines="183" branchcoverage="85.7" coveredbranches="12" totalbranches="14" />
       <Class name="TemplateTester.Models.JsonContent" coverage="100" coveredlines="5" coverablelines="5" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.SimpleEntity" coverage="100" coveredlines="5" coverablelines="5" totallines="17" branchcoverage="" coveredbranches="0" totalbranches="0" />
       <Class name="TemplateTester.Models.TextContent" coverage="100" coveredlines="5" coverablelines="5" totallines="28" branchcoverage="" coveredbranches="0" totalbranches="0" />
