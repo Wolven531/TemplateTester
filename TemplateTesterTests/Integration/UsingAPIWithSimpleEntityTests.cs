@@ -39,7 +39,7 @@ namespace TemplateTesterTests.Integration
 		}
 
 		[Fact]
-		public async Task PostAPIRoot_WhenInvokedWithSimpleEntityInBody_ShouldPersistEntityAndReturnOk()
+		public async Task PostWithModelParam_WhenInvokedWithSimpleEntityInBody_ShouldPersistEntityAndReturnOk()
 		{
 			// NOTE: PHASE 1 - verify OK response from POST
 			// Arrange
@@ -60,6 +60,52 @@ namespace TemplateTesterTests.Integration
 			// Arrange
 			var expectedResponseString = JArray.FromObject(new[] { newEntity }).ToString(Formatting.None);
 			var client2 = _Server.CreateClient();
+
+			// Act
+			var getResponse = await client2.GetAsync("/api/entities");
+			getResponse.EnsureSuccessStatusCode();
+			var getResponseString = await getResponse.Content.ReadAsStringAsync();
+
+			// Assert
+			getResponse.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
+			getResponse.StatusCode.Should().Be(HttpStatusCode.OK);
+			getResponseString.Should().BeEquivalentTo(expectedResponseString);
+		}
+
+		[Fact]
+		public async Task UpdateUsingReadableName_WhenInvokedWithSimpleEntityInBody_ShouldPersistEntityAndReturnNoContent()
+		{
+			// NOTE: PHASE 1 - verify OK response from POST
+			// Arrange
+			var newEntity = new SimpleEntity("name1");
+			var jEntity = JToken.FromObject(newEntity);
+			var uploadData = new JsonContent(jEntity);
+			var client = _Server.CreateClient();
+
+			// Act
+			var response = await client.PostAsync("/api/entities", uploadData);
+			response.EnsureSuccessStatusCode();
+			var responseString = await response.Content.ReadAsStringAsync();
+
+			// Assert
+			response.StatusCode.Should().Be(HttpStatusCode.OK);
+
+			// NOTE: PHASE 2 - verify NoContent response from PUT
+			// Arrange
+			var client2 = _Server.CreateClient();
+
+			// Act
+			var updatedEntity = new SimpleEntity("updated 1");
+			var putResponse = await client2.PutAsync("/api/entities/name1", new JsonContent(JToken.FromObject(updatedEntity)));
+			putResponse.EnsureSuccessStatusCode();
+
+			// Assert
+			putResponse.StatusCode.Should().Be(HttpStatusCode.NoContent);
+
+			// NOTE: PHASE 3 - verify entity was updated using different client
+			// Arrange
+			var expectedResponseString = JArray.FromObject(new[] { updatedEntity }).ToString(Formatting.None);
+			var client3 = _Server.CreateClient();
 
 			// Act
 			var getResponse = await client2.GetAsync("/api/entities");
