@@ -38,15 +38,18 @@ namespace TemplateTesterTests.Integration
 			};
 		}
 
-		[Fact]
-		public async Task GetAPIHealthEndpoint_WhenInvokedWithValidTextFormatParameter_ShouldReturnOkWithTextContent()
+		[Theory]
+		[InlineData("/api/health?format=text")]
+		[InlineData("/api/health?format=")]
+		[InlineData("/api/health")]
+		public async Task GetAPIHealthEndpoint_WhenInvokedWithValidOrEmptyFormatParameter_ShouldReturnOkWithTextContent(string requestPath)
 		{
 			// Arrange
 			var expectedResponse = new TextContent("Boom, baby!");
 			var client = _Server.CreateClient();
 
 			// Act
-			var response = await client.GetAsync("/api/health?format=text");
+			var response = await client.GetAsync(requestPath);
 			response.EnsureSuccessStatusCode();
 
 			// Assert
@@ -71,24 +74,6 @@ namespace TemplateTesterTests.Integration
 		//	response.StatusCode.Should().Be(HttpStatusCode.OK);
 		//	response.Content.Should().BeEquivalentTo(expectedResponse);
 		//}
-
-		[Theory]
-		[InlineData("/api/health")]
-		[InlineData("/api/health?format=")]
-		public async Task GetAPIHealthEndpoint_WhenInvokedWithoutValidFormatParameter_ShouldReturnBadRequestWithJsonError(string requestPath)
-		{
-			// Arrange
-			var expectedResponse = new JsonContent(new JObject { ["error"] = "GET request to this endpoint should have valid `format` query param [`text` | `html` | ``]" });
-			var client = _Server.CreateClient();
-
-			// Act
-			var response = await client.GetAsync(requestPath);
-
-			// Assert
-			response.Content.Headers.ContentType.Should().Be(JsonContent.JSONContentType);
-			response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
-			response.Content.Should().BeEquivalentTo(expectedResponse);
-		}
 
 		public void Dispose()
 		{
