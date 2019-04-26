@@ -24,10 +24,6 @@ Run the following command in PowerShell from the root directory to generate a co
 dotnet test .\TemplateTesterTests\TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover /p:Exclude="[*]*TemplateTester.Pages*"
 ```
 
-```Terminal (MacOS)
-dotnet test ./TemplateTesterTests/TemplateTesterTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-```
-
 ## Generating an HTML Report
 
 First ensure the [ReportGenerator](https://www.nuget.org/packages/dotnet-reportgenerator-globaltool) tool is
@@ -41,10 +37,4 @@ Then run the following to generate a fresh HTML from the coverage file you gener
 
 ```PowerShell
 reportgenerator "-reports:.\TemplateTesterTests\coverage.opencover.xml" "-targetdir:.\TemplateTesterTests\coverage-report" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:.\TemplateTesterTests\coverage-report-history"
-```
-
-TODO: The below line fails because the directory structure still relies on Windows... must fix...
-
-```Terminal (MacOS)
-reportgenerator "-reports:./TemplateTesterTests/coverage.opencover.xml" "-targetdir:./TemplateTesterTests/coverage-report" "-reporttypes:HTML;HTMLChart;XML;Badges" "-historydir:./TemplateTesterTests/coverage-report-history"
 ```

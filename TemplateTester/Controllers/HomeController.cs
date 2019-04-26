@@ -62,12 +62,12 @@ namespace TemplateTester.Controllers
 		}
 
 		[HttpGet("health")]
-		public IActionResult GetAPIHealth([FromQuery] string format = null)
+		public IActionResult GetAPIHealth([FromQuery] string format = "")
 		{
 			const string responseText = "Boom baby!";
 			ObjectResult resp;
 
-			if (format == string.Empty || "text".Equals(format, StringComparison.InvariantCultureIgnoreCase))
+			if (string.IsNullOrEmpty(format) || "text".Equals(format, StringComparison.InvariantCultureIgnoreCase))
 			{
 				resp = Ok(responseText);
 				resp.ContentTypes.Clear();
